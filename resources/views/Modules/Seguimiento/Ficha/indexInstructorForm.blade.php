@@ -34,42 +34,46 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
-                                <label class="control-label">Seleccionar el programa de formaci&oacute;n</label>
-                                <select data-rel="chosen" id="" name="" class="js-example-basic-single form-control" required="required">
-                                    <option value="">-- Seleccione el c&oacute;digo del programa de formaci&oacute;n --</option>
-                                    @foreach($programas as $programa)
-                                        <option value="{{ $programa->prog_codigo }}">{{ $programa->prog_codigo }} - {{ $programa->prog_nombre }}</option>
-                                    @endforeach
-                                </select><br>
+                            <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
+                                <div class="row">
+                                    <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7">
+                                        <label class="control-label">Seleccionar el programa de formaci&oacute;n</label>
+                                        <select data-rel="chosen" id="prog_codigo" name="prog_codigo" class="js-example-basic-single form-control" required="required">
+                                            <option value="">-- Seleccione el c&oacute;digo del programa de formaci&oacute;n --</option>
+                                            @foreach($programas as $programa)
+                                                <option value="{{ $programa->prog_codigo }}">{{ $programa->prog_codigo }} - {{ $programa->prog_nombre }}</option>
+                                            @endforeach
+                                        </select><br>
+                                    </div>
+                                    <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+                                        <label class="control-label">Version del programa</label>
+                                        <input type="number" class="form-control" name="prog_codigo_version" id="prog_codigo_version"><br>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7">
+                                        <label class="control-label">¿Requiere espacio en la BlackBoard?</label><br>
+                                        <input type="radio" name="fic_car_blackboard" id="fic_car_blackboard" value="si"> Si <br>
+                                        <input type="radio" name="fic_car_blackboard" id="fic_car_blackboard" value="no"> No
+                                    </div>
+                                    <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+                                        <label class="control-label">Tipo de formación</label><br>
+                                        <input type="radio" name="pla_tip_ofe_id" id="pla_tip_ofe_id" value="abierta"> Abierta <br>
+                                        <input type="radio" name="pla_tip_ofe_id" id="pla_tip_ofe_id" value="cerrada"> Cerrada
+                                    </div>
+                                </div>
                             </div>
-                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                <label class="control-label">Version del programa</label>
-                                <input type="number" class="form-control" name="" id=""><br>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                <label class="control-label">¿Requiere espacio en la BlackBoard?</label><br>
-                                <input type="radio" name="x" id="" value="si"> Si <br>
-                                <input type="radio" name="x" id="" value="no"> No <br>
-                            </div>
-                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                <label class="control-label">Tipo de formación</label><br>
-                                <input type="radio" name="y" id="" value="abierta"> Abierta <br>
-                                <input type="radio" name="y" id="" value="cerrada"> Cerrada <br>
-                            </div>
-                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
                                 <label class="control-label">Nivel de formación</label><br>
-                                <input type="radio" name="z" id="" value="titulada"> Titulada&nbsp;&nbsp;&nbsp;
-                                <input type="radio" name="z" id="" value="operario"> Operario&nbsp;&nbsp;&nbsp;
-                                <input type="radio" name="z" id="" value="tecnico"> Técnico&nbsp;&nbsp;&nbsp;
-                                <input type="radio" name="z" id="" value="tecnico"> Tecnólogo&nbsp;&nbsp;&nbsp;
-                                <input type="radio" name="z" id="" value="tecnologo"> Especialización Tecnológica&nbsp;&nbsp;&nbsp;
-                                <input type="radio" name="z" id="" value="complementaria"> Complementaria&nbsp;&nbsp;&nbsp;
+                                <input type="radio" name="niv_for_id" id="niv_for_id" value="titulada"> Titulada <br>
+                                <input type="radio" name="niv_for_id" id="niv_for_id" value="operario"> Operario <br>
+                                <input type="radio" name="niv_for_id" id="niv_for_id" value="tecnico"> Técnico <br>
+                                <input type="radio" name="niv_for_id" id="niv_for_id" value="tecnico"> Tecnólogo <br>
+                                <!-- <input type="radio" name="niv_for_id" id="niv_for_id" value="tecnologo"> Especialización Tecnológica <br> -->
+                                <input type="radio" name="niv_for_id" id="niv_for_id" value="complementaria"> Complementaria
                             </div>
                         </div><br>
-                        <div class="row">
+                        <!-- <div class="row" id="">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                 <div class="row">
                                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
@@ -118,7 +122,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                         <div class="row">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                     <table class="table table-bordered table-responsive">
@@ -224,7 +228,7 @@
                                             <td><input type="time" class="form-control" name="" id=""></td>
                                             <td><input type="time" class="form-control" name="" id=""></td>
                                         </tr>
-                                        <tr>
+                                        <!-- <tr>
                                             <td>
                                                 Domingo
                                             </td>
@@ -238,7 +242,7 @@
                                             </td>
                                             <td><input type="time" class="form-control" name="" id=""></td>
                                             <td><input type="time" class="form-control" name="" id=""></td>
-                                        </tr>
+                                        </tr> -->
                                     </tbody>
                                 </table>
                             </div>
@@ -254,7 +258,7 @@
                                 </select>
                             </div>
                         </div><br>
-                        <div class="row">
+                        <!-- <div class="row">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                 <p>Datos de la empresa solicitante</p>
                             </div>
@@ -294,6 +298,12 @@
                                 <label class="control-label">Municipio</label>
                                 <input type="text" class="form-control" name="" id=""><br>
                             </div>
+                        </div><br> -->
+                        <div class="row">
+                            <div class="text-center">
+								<input type="hidden" name="_token" value="{{ csrf_token() }}">
+								<input type="button" class="btn btn-success" id="botonGuardar" value="Guardar cambios">
+							</div>
                         </div>
                     </div>
                 </div>
@@ -310,6 +320,24 @@
 <script type="text/javascript">
 
     $(document).ready(function () {
+
+        $(document).on('click','#botonAprobar',function () {
+            var url = $(this).attr('data-url');
+            var fic_car_id = $(this).attr('data-id');
+            var acc = $(this).attr('data-acc');
+            var _token = $('#_token').val();
+            var opcion = confirm('¿Esta seguro de APROBAR la solicitud No. '+fic_car_id+'?');
+            if (opcion == true) {
+                $.ajax({
+                    url: url,
+                    type: "POST",
+                    data: "fic_car_id="+fic_car_id+"&acc="+acc+"&_token="+_token,
+                    success: function(data){
+                        location.reload('listarCaracterizaciones');
+                    }
+                });
+            }
+        });
 
     });
 

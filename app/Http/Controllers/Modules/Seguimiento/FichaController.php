@@ -1370,8 +1370,8 @@ class FichaController extends Controller {
 		$sql = "SELECT id, descripcion FROM sep_ingreso_ambiente ORDER BY descripcion";
         $ambientes = DB::select($sql);
 		
-		// Preguntar por tabla de estado de usuario
-		$sql = "SELECT par_identificacion, par_nombres, par_apellidos FROM sep_participante p WHERE rol_id = 2 ORDER BY par_apellidos";
+		$sql="SELECT * FROM users u, sep_participante p WHERE u.par_identificacion = p.par_identificacion AND p.rol_id = 2 ORDER BY p.par_nombres ASC";
+		// $sql = "SELECT par_identificacion, par_nombres, par_apellidos FROM sep_participante p WHERE rol_id = 2 ORDER BY par_apellidos";
         $participante = DB::select($sql);
 
         return view('Modules.Seguimiento.Ficha.indexInstructorForm', compact('programas', 'ambientes', 'participante'));
@@ -1386,7 +1386,21 @@ class FichaController extends Controller {
 
 	public function getListarcaracterizaciones()
 	{
-		$sql = "SELECT fc.fic_car_id, fc.fic_car_nombre, e.fic_car_est_descripcion, fc.fic_car_est_id FROM sep_ficha_caracterizacion fc, sep_ficha_caracterizacion_estado e WHERE fc.fic_car_est_id = e.fic_car_est_id";
+		$sql = "SELECT 
+			fc.fic_car_id, 
+			fc.prog_codigo, 
+			fc.prog_codigo_version,
+			fic_car_blackboard,
+			pla_tip_ofe_id,
+			niv_for_id,
+			fic_car_fec_diligenciada,
+			fc.fic_car_est_id,
+			e.fic_car_est_descripcion,
+			FROM 
+			sep_ficha_caracterizacion fc, 
+			sep_ficha_caracterizacion_estado e 
+			WHERE 
+			fc.fic_car_est_id = e.fic_car_est_id";
         $data = DB::select($sql);
 
 		$rol = \Auth::user()->participante->rol_id;
