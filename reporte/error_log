@@ -1,0 +1,4 @@
+[26-Feb-2020 11:50:36 America/Bogota] PHP Notice:  Undefined variable: sql in /home/cdtiapps/public_html/reporte/reporte2.php on line 12
+[26-Feb-2020 11:50:36 America/Bogota] PHP Warning:  mysqli_query(): Empty query in /home/cdtiapps/public_html/reporte/reporte2.php on line 12
+[26-Feb-2020 11:51:06 America/Bogota] PHP Notice:  Undefined variable: sql in /home/cdtiapps/public_html/reporte/reporte2.php on line 12
+[26-Feb-2020 11:51:06 America/Bogota] PHP Warning:  mysqli_query(): Empty query in /home/cdtiapps/public_html/reporte/reporte2.php on line 12

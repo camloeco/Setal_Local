@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modulo>
+    <nombre>Users</nombre> 
+    <descripcion>Modulo de usuarios</descripcion> 
+    <display>Usuarios</display>
+    <carpeta>Users</carpeta>
+    
+    <controladores>
+        
+        <controlador>
+            
+            <nombre>UsersController</nombre>
+            <display>Usuarios</display>
+            <descripcion>Controlador de usuarios</descripcion>
+            
+            <funciones>
+                <funcion>
+                    <nombre>create</nombre>
+                    <display>Crear usuario</display>
+                    <descripcion>Crear usuario</descripcion>
+                </funcion>
+                <funcion>
+                    <nombre>index</nombre>
+                    <display>Listar usuarios</display>
+                    <descripcion>Listar usuarios</descripcion>
+                </funcion>
+                <funcion>
+                    <nombre>show</nombre>
+                    <display>Ver detalle</display>
+                    <descripcion>Ver detalle</descripcion>
+                </funcion>
+                <funcion>
+                    <nombre>edit</nombre>
+                    <display>Editar usuario</display>
+                    <descripcion>Editar usuario</descripcion>
+                </funcion>
+                <funcion>
+                    <nombre>editprofile</nombre>
+                    <display>Editar perfil</display>
+                    <descripcion>Editar perfil</descripcion>
+                </funcion>
+                <funcion>
+                    <nombre>showprofile</nombre>
+                    <display>Ver perfil</display>
+                    <descripcion>Ver perfil</descripcion>
+                </funcion>
+            </funciones>
+       
+        </controlador>
+        
+        <controlador>
+            
+            <nombre>RolController</nombre>
+            <display>Roles</display>
+            <descripcion>Controlador de roles</descripcion>
+            
+            <funciones>
+                <funcion>
+                    <nombre>index</nombre>
+                    <display>Listar roles</display>
+                    <descripcion>Listar roles</descripcion>
+                </funcion>
+                <funcion>
+                    <nombre>create</nombre>
+                    <display>Crear roles</display>
+                    <descripcion>Crear roles</descripcion>
+                </funcion>
+                <funcion>
+                    <nombre>edit</nombre>
+                    <display>Editar roles</display>
+                    <descripcion>Editar roles</descripcion>
+                </funcion>
+                <funcion>
+                    <nombre>deleted</nombre>
+                    <display>Eliminar roles</display>
+                    <descripcion>Eliminar roles</descripcion>
+                </funcion>
+                <funcion>
+                    <nombre>permisos</nombre>
+                    <display>Asignar permisos</display>
+                    <descripcion>Asignar permisos</descripcion>
+                </funcion>
+            </funciones>
+       
+        </controlador>
+        
+    </controladores>
+</modulo>

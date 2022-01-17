@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modulo>
+    <nombre>Seguimiento</nombre> 
+    <descripcion>Modulo de Seguimiento a etapa lectiva</descripcion> 
+    <display>Seguimiento</display>
+    <carpeta>Seguimiento</carpeta>
+    
+    <controladores>
+        
+        <controlador>
+            
+            <nombre>EducativaController</nombre>
+            <display>Educativa</display>
+            <descripcion>Controlador de administración educativa</descripcion>
+            
+            <funciones>
+                <funcion>
+                    <nombre>queja</nombre>
+                    <display>Generar falta</display>
+                    <descripcion>Generar falta</descripcion>
+                </funcion>
+                <funcion>
+                    <nombre>listarqueja</nombre>
+                    <display>Listar faltas</display>
+                    <descripcion>Listar informe o queja</descripcion>
+                </funcion>
+                <funcion>
+                    <nombre>gestionarqueja</nombre>
+                    <display>Gestionar faltas</display>
+                    <descripcion>Gestionar informe o queja</descripcion>
+                </funcion>
+                <funcion>
+                    <nombre>programarcomite</nombre>
+                    <display>Gestion comite</display>
+                    <descripcion>Gestion comite</descripcion>
+                </funcion>
+                <funcion>
+                    <nombre>aprobarqueja</nombre>
+                    <display>Aprobar faltas</display>
+                    <descripcion>Aprobar faltas</descripcion>
+                </funcion>
+                <funcion>
+                    <nombre>rechazarqueja</nombre>
+                    <display>Rechazar faltas</display>
+                    <descripcion>Rechazar faltas</descripcion>
+                </funcion>
+                <funcion>
+                    <nombre>comiteordinario</nombre>
+                    <display>Programar comite ordinario</display>
+                    <descripcion>Programar comite ordinario</descripcion>
+                </funcion>
+                <funcion>
+                    <nombre>comiteordinario</nombre>
+                    <display>Programar comite ordinario</display>
+                    <descripcion>Programar comite ordinario</descripcion>
+                </funcion>
+            </funciones>
+       
+        </controlador>
+        
+        <controlador>
+            
+            <nombre>FichaController</nombre>
+            <display>Fichas</display>
+            <descripcion>Controlador de fichas</descripcion>
+            
+            <funciones>
+                <funcion>
+                    <nombre>index</nombre>
+                    <display>Listar fichas</display>
+                    <descripcion>Listar fichas</descripcion>
+                </funcion>
+                <funcion>
+                    <nombre>create</nombre>
+                    <display>Crear ficha</display>
+                    <descripcion>Crear ficha</descripcion>
+                </funcion>
+                <funcion>
+                    <nombre>edit</nombre>
+                    <display>Editar fichas</display>
+                    <descripcion>Editar fichas</descripcion>
+                </funcion>
+                <funcion>
+                    <nombre>deleted</nombre>
+                    <display>Eliminar ficha</display>
+                    <descripcion>Eliminar ficha</descripcion>
+                </funcion>
+                
+            </funciones>
+       
+        </controlador>
+        
+        
+        <controlador>
+            
+            <nombre>ParticipanteController</nombre>
+            <display>Participantes</display>
+            <descripcion>Controlador de participantes</descripcion>
+            
+            <funciones>
+                <funcion>
+                    <nombre>carga</nombre>
+                    <display>Importar participantes</display>
+                    <descripcion>Importar participantes</descripcion>
+                </funcion>
+            </funciones>
+       
+        </controlador>
+        
+        
+        <controlador>
+            
+            <nombre>ProgramaController</nombre>
+            <display>Programas</display>
+            <descripcion>Controlador de programas</descripcion>
+            
+            <funciones>
+                <funcion>
+                    <nombre>crear</nombre>
+                    <display>Crear programas</display>
+                    <descripcion>Crear programas</descripcion>
+                </funcion>
+                <funcion>
+                    <nombre>index</nombre>
+                    <display>Listar programas</display>
+                    <descripcion>Listar programas</descripcion>
+                </funcion>
+                <funcion>
+                    <nombre>create</nombre>
+                    <display>Importar programa</display>
+                    <descripcion>Importar programa</descripcion>
+                </funcion>
+                <funcion>
+                    <nombre>edit</nombre>
+                    <display>Editar programa</display>
+                    <descripcion>Editar programa</descripcion>
+                </funcion>
+                <funcion>
+                    <nombre>deleted</nombre>
+                    <display>Eliminar programa</display>
+                    <descripcion>Eliminar programa</descripcion>
+                </funcion>
+                <funcion>
+                    <nombre>show</nombre>
+                    <display>Ver programa</display>
+                    <descripcion>Ver programa</descripcion>
+                </funcion>
+                
+                <funcion>
+                    <nombre>planeacion</nombre>
+                    <display>Ver planeación</display>
+                    <descripcion>Ver planeación</descripcion>
+                </funcion>
+            </funciones>
+       
+        </controlador>
+        
+        <controlador>
+            
+            <nombre>HorarioController</nombre>
+            <display>Horarios</display>
+            <descripcion>Controlador de horarios</descripcion>
+            
+            <funciones>
+                <funcion>
+                    <nombre>ficha</nombre>
+                    <display>Crear horario</display>
+                    <descripcion>Crear horario</descripcion>
+                </funcion>
+            </funciones>
+       
+        </controlador>
+        
+        
+        <controlador>
+            
+            <nombre>ReportesController</nombre>
+            <display>Reportes</display>
+            <descripcion>Controlador de reportes</descripcion>
+            
+            <funciones>
+                <funcion>
+                    <nombre>index</nombre>
+                    <display>Listar reportes</display>
+                    <descripcion>Listar reportes</descripcion>
+                </funcion>
+                <funcion>
+                    <nombre>participantes</nombre>
+                    <display>Reportes participantes</display>
+                    <descripcion>Reportes participantes</descripcion>
+                </funcion>
+                <funcion>
+                    <nombre>fichas</nombre>
+                    <display>Reportes fichas</display>
+                    <descripcion>Reportes fichas</descripcion>
+                </funcion>
+                <funcion>
+                    <nombre>aprendiz</nombre>
+                    <display>Reportes aprendiz</display>
+                    <descripcion>Reportes aprendiz</descripcion>
+                </funcion>
+                <funcion>
+                    <nombre>sabana</nombre>
+                    <display>Generar sabana</display>
+                    <descripcion>Generar sabana</descripcion>
+                </funcion>
+                
+            </funciones>
+       
+        </controlador>
+        
+    </controladores>
+</modulo>

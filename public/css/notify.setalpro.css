@@ -1,0 +1,70 @@
+.cuadro-ok{
+    background:#2084d8;
+}
+.cuadro-err{
+    background:#74383d;
+}
+.barra-ok{
+    background:#132c3f;
+}
+.barra-err{
+    background:rgba(0,0,255, 0.5);
+}
+.cuadro{
+    width: 280px;
+    border-radius: 5px;
+    box-shadow: 2px 5px 10px black;
+    float:right;
+    z-index: 10;
+    position: fixed;
+    margin-left: 60%;
+    color:white;
+}
+.cuadro-contenido{
+    padding:15px;
+}
+.cuadro-header{
+    border-width:1px;
+    padding: 5px;
+}
+.cuadro-header span{
+    float:right;
+    cursor:pointer;
+}
+.cuadro-header span:hover{
+    color:black;
+}
+.cuadro-mensaje{
+    padding: 5px;
+    word-wrap: break-word;
+}
+.cuadro-footer{
+    border: 1px solid black;
+    width:100%;
+    height:15px;
+    background:rgba(255,255,255,0.7);
+    border-radius: 5px;
+}
+.barra{
+    border-radius: 1px;
+    height:13px;
+    width:0%;
+    animation: barra 5s linear alternate both;
+}
+@keyframes barra {
+0%{
+    width:0%;
+}
+25%{
+    width:25%;
+}
+50%{
+    width:50%;
+}
+75%{
+    width:75%;
+}
+100%{
+    width:100%;
+}
+}

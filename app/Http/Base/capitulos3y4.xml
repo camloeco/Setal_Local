@@ -1,0 +1,476 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<reglamento>
+   <capitulo>
+    <nombre>CAPITULO III </nombre>
+    <descripcion>DEBERES DEL APRENDIZ SENA </descripcion>
+    <articulo>
+        <nombre>ARTÍCULO 9°.</nombre>
+        <descripcion> Se entiende por deber, la obligación legal, social y moral que compromete a la 
+            persona a cumplir con determinada actuación, asumiendo con responsabilidad todos sus actos, 
+            para propiciar la armonía, el respeto, la integración, el bienestar común, la sana convivencia, el 
+            servicio a los demás, la seguridad de las personas y de los bienes de la institución. 
+            Son deberes del aprendiz SENA durante el proceso de ejecución de la formación, los siguientes: 
+        </descripcion>
+        <literal>
+            <nombre>1</nombre>
+            <descripcion> Cumplir con todas las actividades propias de su proceso de aprendizaje o del plan de mejoramiento, 
+                definidas durante su etapa lectiva y productiva. 
+            </descripcion>
+        </literal>
+        <literal>
+            <nombre>2</nombre>
+            <descripcion> Respetar los derechos ajenos y no abusar de los propios. 
+            </descripcion>
+        </literal>
+        <literal>
+            <nombre>3</nombre>
+            <descripcion> Verificar en el sistema que sus datos básicos, se encuentren totalmente diligenciados y/o 
+                actualizarlos de acuerdo con el trámite administrativo correspondiente. 
+            </descripcion>
+        </literal>
+        <literal>
+            <nombre>4</nombre>
+            <descripcion> Participar en las actividades complementarias o de profundización, relacionadas con el 
+                programa de formación, con el fin de gestionar su proceso de aprendizaje. 
+            </descripcion>
+        </literal>
+        <literal>
+            <nombre>5</nombre>
+            <descripcion> Informar y hacer la solicitud, por escrito, al Coordinación Académico y registrar en el sistema 
+                de gestión de la formación oportunamente las solicitudes o novedades (Traslados, Aplazamiento, 
+                Retiro voluntario y Reingreso) que presente durante el proceso de aprendizaje, utilizando medios 
+                virtuales y/o físicos; para los programas de formación complementaria en modalidad virtual, 
+                realizar en los sistemas de información el retiro voluntario del programa o inscripción del mismo. 
+            </descripcion>
+        </literal>
+        <literal>
+            <nombre>6</nombre>
+            <descripcion> Si el trámite para la consecución de contrato de aprendizaje o de otra de las alternativas para 
+                el desarrollo de la etapa productiva, es realizado directamente por el aprendiz, éste deberá 
+                informar inmediatamente cuando esto ocurra, a los responsables de apoyar este proceso en el 
+                Centro de Formación. 
+            </descripcion>
+        </literal>
+        <literal>
+            <nombre>7</nombre>
+            <descripcion> Proteger los recursos culturales y naturales del país y velar por la conservación del ambiente sano, 
+                vinculándose, apoyando y/o colaborando en las acciones que adelante el Centro de Formación. 
+            </descripcion>
+        </literal>
+        <literal>
+            <nombre>8</nombre>
+            <descripcion> Acatar las decisiones contempladas en el Manual de Convivencia. 
+            </descripcion>
+        </literal>
+        <literal>
+            <nombre>9</nombre>
+            <descripcion> Asumir con responsabilidad su participación en las actividades programadas como salidas, 
+                pasantías técnicas, intercambios de aprendices a nivel nacional e internacional, así como en las 
+                demás de carácter lúdico -pedagógico. 
+            </descripcion>
+        </literal>
+        <literal>
+            <nombre>10</nombre>
+            <descripcion> Hacer uso apropiado de los ambientes de aprendizaje (infraestructura, equipos, herramientas, 
+                recursos didácticos, técnicos, tecnológicos, bibliográficos) disponibles para su proceso de 
+                aprendizaje, asumiendo responsabilidad legal en situaciones de utilización inadecuada y uso 
+                indebido, que deterioran los ambientes de aprendizaje y generan detrimento patrimonial. 
+            </descripcion>
+        </literal>
+        <literal>
+            <nombre>11</nombre>
+            <descripcion> Asistir a las reuniones que programe el Centro de Formación para seguimiento a las actividades 
+                desarrolladas durante la etapa productiva. La no asistencia a estas reuniones debe 
+                justificarse mediante excusa comprobable. 
+            </descripcion>
+        </literal>
+        <literal>
+            <nombre>12</nombre>
+            <descripcion> Respetar los derechos de autor en los materiales, trabajos, proyectos y demás documentos 
+                generados por los grupos de trabajo o compañeros, y que hayan sido compartidos al interior de 
+                la Plataforma. Sin embargo, con la autorización de los creadores se puede hacer uso de 
+                cualquier material publicado, dando el crédito a quien generó la idea, a la fuente que se consultó 
+                o al recurso que referencia la información. 
+            </descripcion>
+        </literal>
+        <literal>
+            <nombre>13</nombre>
+            <descripcion> Conocer y asumir las políticas y directrices institucionales establecidas, así como el Reglamento 
+                del Aprendiz SENA, y convivir en comunidad de acuerdo con ellos. 
+            </descripcion>
+        </literal>
+        <literal>
+            <nombre>14</nombre>
+            <descripcion> Portar permanentemente y en lugar visible el carné que lo identifica como Aprendiz SENA, 
+                durante su proceso de aprendizaje, renovarlo de acuerdo con las disposiciones vigentes y 
+                devolverlo al finalizar el programa o cuando se presente retiro, aplazamiento o cancelación de 
+                la matrícula. En caso de pérdida de carné, el aprendiz debe formular la denuncia correspondiente, 
+                tramitar el duplicado y cancelar el valor respectivo con base en la normatividad dada por 
+                Dirección General. 
+            </descripcion>
+        </literal>
+        <literal>
+            <nombre>15</nombre>
+            <descripcion> Utilizar la dotación o ropa de trabajo y los elementos de protección personal dispuestos en 
+                los ambientes de aprendizaje, observando las condiciones de prevención señaladas por el 
+                Instructor o Tutor y organizarlos para ser utilizados exclusivamente en el ambiente de aprendizaje 
+                requerido. 
+            </descripcion>
+        </literal>
+        <literal>
+            <nombre>16</nombre>
+            <descripcion> Portar el uniforme de manera decorosa; dentro del Centro de Formación, en los ambientes 
+                donde se desarrollen actividades extracurriculares y entornos diferentes al académico. Así 
+                como en el desarrollo de la etapa productiva, cuando la empresa patrocinadora lo exija. 
+            </descripcion>
+        </literal>
+        <literal>
+            <nombre>17</nombre>
+            <descripcion> Conservar y mantener en buen estado, orden y aseo, las instalaciones físicas, el material 
+                didáctico, equipos y herramientas de la entidad o que estén a cargo de ésta, respondiendo por 
+                los daños ocasionados a éstos intencionalmente o por descuido, debidamente comprobados. 
+            </descripcion>
+        </literal>
+        <literal>
+            <nombre>18</nombre>
+            <descripcion> Actuar siempre teniendo como base los principios y valores para la convivencia; obrar con 
+                honestidad, respeto, responsabilidad, lealtad, justicia, compañerismo y solidaridad con la 
+                totalidad de los integrantes de la comunidad educativa y expresarse con respeto, cultura y 
+                educación, en forma directa, a través de medios impresos o electrónicos que le facilita la 
+                entidad (como foros de discusión, redes sociales, chat, correo electrónico, blogs y demás). 
+            </descripcion>
+        </literal>
+        <literal>
+            <nombre>19</nombre>
+            <descripcion> Hacer uso apropiado de los espacios de comunicación y respetar a los integrantes de la 
+                comunidad educativa, siendo solidario, tolerante y veraz en la información que se publique en 
+                medios impresos o digitales; abstenerse de enviar material multimedia que contenga imágenes, 
+                videos, documentos o grabaciones que no sean objeto de las actividades de aprendizaje. 
+            </descripcion>
+        </literal>
+        <literal>
+            <nombre>20</nombre>
+            <descripcion> Informar al instructor, coordinador, directivo o personal de apoyo, cualquier irregularidad que 
+                comprometa el buen nombre y normal marcha del Centro de Formación de la entidad y de la 
+                comunidad educativa, o que considere sospechosa dentro de la Institución y en los ambientes 
+                de aprendizaje, permitiendo una actuación oportuna, preventiva o correctiva. 
+            </descripcion>
+        </literal>
+        <literal>
+            <nombre>21</nombre>
+            <descripcion> Respetar la dignidad, intimidad e integridad de los miembros de la comunidad educativa SENA. 
+            </descripcion>
+        </literal>
+        <literal>
+            <nombre>22</nombre>
+            <descripcion> Respetar los bienes y elementos de propiedad de los integrantes de la comunidad educativa 
+                y del SENA. 
+            </descripcion>
+        </literal>
+        <literal>
+            <nombre>23</nombre>
+            <descripcion> Obrar conforme al principio del respeto de los derechos de los demás evitando realizar y/o 
+                apoyar actos que limiten y/o afecten a la comunidad educativa, como impedir el acceso a funcionarios 
+                y aprendices a los centros de formación y demás instalaciones del SENA. 
+            </descripcion>
+        </literal>
+        <literal>
+            <nombre>24</nombre>
+            <descripcion> Presentar siempre las mejores condiciones de aseo y pulcritud personal. 
+            </descripcion>
+        </literal>
+        <literal>
+            <nombre>25</nombre>
+            <descripcion> Enaltecer y respetar los símbolos patrios e institucionales. 
+            </descripcion>
+        </literal>
+        <literal>
+            <nombre>26</nombre>
+            <descripcion> No usar expresiones grotescas en foros de discusión, mensajes, anuncios, correos tanto 
+                generales como en grupos de trabajo. 
+            </descripcion>
+        </literal>
+        <literal>
+            <nombre>27</nombre>
+            <descripcion> Cumplir a cabalidad la normatividad vigente del estado Colombiano en lo referente a 
+                delitos informáticos. 
+            </descripcion>
+        </literal>
+        <literal>
+            <nombre>28</nombre>
+            <descripcion> Denunciar tratos, propuestas, o actos inmorales de parte de cualquier funcionario y de 
+                cualquier miembro de la comunidad educativa. 
+            </descripcion>
+        </literal>
+        <literal>
+            <nombre>29</nombre>
+            <descripcion> Suscribir al momento de asentar la matrícula el Acta de compromiso como Aprendiz SENA. 
+            </descripcion>
+        </literal>
+        <literal>
+            <nombre>30</nombre>
+            <descripcion> Verificar a través del Sistema Gestión Virtual de Aprendices, que el contrato de aprendizaje 
+                con la empresa patrocinadora se encuentre acorde al contrato físico firmado, y en caso de 
+                encontrar inconsistencias reportarlo de forma inmediata a la Oficina de Promoción y Relaciones 
+                Corporativas de su Centro con la líder de contrato de aprendizaje. 
+            </descripcion>
+        </literal>
+    </articulo>
+    <articulo>
+        <nombre>PARÁGRAFO 1.</nombre>
+        <descripcion> Además de los deberes enunciados, el Aprendiz en formación con modalidad 
+            virtual y a distancia considerará las siguientes responsabilidades: 
+        </descripcion>
+        <literal>
+            <nombre>a</nombre>
+            <descripcion> Acceder regularmente a los ambientes virtuales previstos para la formación y mantener una 
+                comunicación frecuente con el tutor. 
+            </descripcion>
+        </literal>
+        <literal>
+            <nombre>b</nombre>
+            <descripcion> Dedicar al proceso de aprendizaje las horas semanales señaladas para cada programa, que 
+                permitan dar cumplimiento a las horas establecidas, teniendo en cuenta el cronograma y metodología 
+                establecidos por el instructor- tutor. 
+            </descripcion>
+        </literal>
+        <literal>
+            <nombre>c</nombre>
+            <descripcion> Ingresar a la plataforma virtual, debidamente identificado con el respectivo código de acceso, 
+                personal e intransferible. El Usuario y la Contraseña suministrado al aprendiz por la Entidad, 
+                para el acceso a la plataforma virtual son de uso personal exclusivo, por lo tanto no debe transferirse 
+                a otras personas. El mal uso de esta información es de su competencia directa y asumirá 
+                por ello las responsabilidades correspondientes. 
+            </descripcion>
+        </literal>
+        <literal>
+            <nombre>d</nombre>
+            <descripcion> Realizar personalmente las evaluaciones, investigaciones, actividades y prácticas de formación, 
+                haciendo uso de sus conocimientos, su esfuerzo personal, creatividad y autoría propia, 
+                absteniéndose de presentar como propios, escritos, documentos, ideas, o resultados que no 
+                sean de su autoría. 
+            </descripcion>
+        </literal>
+        <literal>
+            <nombre>e</nombre>
+            <descripcion> Participar en los foros de discusión y demás espacios de socialización del ambiente virtual, 
+                reconociendo, compartiendo y construyendo conocimiento con los integrantes de la comunidad 
+                educativa, contribuyendo con el aporte de conocimientos y destrezas en la solución y propuesta 
+                de los temas del programa. 
+            </descripcion>
+        </literal>
+        <literal>
+            <nombre>f</nombre>
+            <descripcion> Respetar los comentarios o participaciones realizadas por los demás integrantes de la comunidad 
+                educativa. 
+            </descripcion>
+        </literal>
+        <literal>
+            <nombre>g</nombre>
+            <descripcion> Cumplir con los trabajos indicados por los Tutores, enviando puntualmente las actividades 
+                definidas en el cronograma del Programa. 
+            </descripcion>
+        </literal>
+    </articulo>
+</capitulo>
+<capitulo>
+    <nombre>CAPITULO IV </nombre>
+    <descripcion>PROHIBICIONES </descripcion>
+    <articulo>
+        <nombre>ARTÍCULO 10°.</nombre>
+        <descripcion>    Se considerarán prohibiciones para los aprendices del SENA, las siguientes: 
+        </descripcion>
+        <literal>
+            <nombre>1</nombre>
+            <descripcion> Plagiar materiales, trabajos y demás documentos generados en los grupos de trabajo o 
+                producto del trabajo en equipo institucional, así como las fuentes bibliográficas consultadas en 
+                los diferentes soportes. 
+            </descripcion>
+        </literal>
+        <literal>
+            <nombre>2</nombre>
+            <descripcion> Terminar unilateralmente el contrato de aprendizaje, sin el visto bueno del empleador y del SENA. 
+            </descripcion>
+        </literal>
+        <literal>
+            <nombre>3</nombre>
+            <descripcion> Incumplir con las actividades de aprendizaje acordadas y los compromisos adquiridos como 
+                aprendiz SENA, sin justa causa. 
+            </descripcion>
+        </literal>
+        <literal>
+            <nombre>4</nombre>
+            <descripcion> Realizar fraude en evaluaciones, en el proceso de aprendizaje o en concursos, juegos o 
+                competencias de cualquier carácter. 
+            </descripcion>
+        </literal>
+        <literal>
+            <nombre>5</nombre>
+            <descripcion> Aportar documentación o información que difiera con la real, para el ingreso a la entidad o 
+                para obtener cualquier beneficio de la misma. 
+            </descripcion>
+        </literal>
+        <literal>
+            <nombre>6</nombre>
+            <descripcion> Fumar en áreas no permitidas en el centro de formación, así como ingresar, comercializar, 
+                promocionar, ingerir o suministrar bebidas alcohólicas o sustancias psicoactivas, dentro de las 
+                instalaciones del SENA, o ingresar a la entidad en estado que indique alteraciones ocasionadas 
+                por el consumo de éstos. 
+            </descripcion>
+        </literal>
+        <literal>
+            <nombre>7</nombre>
+            <descripcion> Ingresar o portar armas, objetos corto-punzantes, explosivos u otros artefactos que representen 
+                riesgo o puedan ser empleados para atentar contra la vida o la integridad física de las personas, 
+                para destruir o deteriorar la planta física o los bienes del SENA o de las instituciones con las 
+                cuales se adelanten actividades de aprendizaje, culturales, recreativas, deportivas y sociales. 
+                Los miembros de la fuerza pública y organismos de seguridad del Estado, que se encuentren en 
+                un proceso de aprendizaje, no podrán portar armas en el Centro de Formación. 
+            </descripcion>
+        </literal>
+        <literal>
+            <nombre>8</nombre>
+            <descripcion> Utilizar el nombre del SENA, las instalaciones o campos virtuales, para actividades particulares 
+                o con ánimo de lucro, exceptuando aquellas que sean parte de proyectos productivos 
+                aprobados por el Subdirector de Centro o la instancia competente. 
+            </descripcion>
+        </literal>
+        <literal>
+            <nombre>9</nombre>
+            <descripcion> Hurtar, estafar o abusar de la confianza de cualquier integrante de la comunidad educativa, o 
+                amenazarlo, sobornarlo, coaccionarlo o agredirlo verbal o físicamente, o ser cómplice o coparticipe 
+                de delitos contra ellos o contra la institución. 
+            </descripcion>
+        </literal>
+        <literal>
+            <nombre>10</nombre>
+            <descripcion> Contribuir al desorden y/o al desaseo. 
+            </descripcion>
+        </literal>
+        <literal>
+            <nombre>11</nombre>
+            <descripcion> Destruir, sustraer, dañar total o parcialmente instalaciones físicas, equipos, materiales, 
+                software, elementos y dotación en general del SENA o de instituciones, empresas u otras 
+                entidades donde se desarrollen actividades de aprendizaje, culturales, recreativas, deportivas y 
+                sociales o intercambios estudiantiles nacionales o internacionales. 
+            </descripcion>
+        </literal>
+        <literal>
+            <nombre>12</nombre>
+            <descripcion> Obstaculizar el ingreso a las instalaciones de los Centros de Formación y/o perturbar el 
+                desarrollo normal de las actividades de aprendizaje, liderando o apoyando este tipo de actos en 
+                oficinas, ambientes de aprendizaje, zonas de descanso, bibliotecas y en general donde éstas 
+                se desarrollen. 
+            </descripcion>
+        </literal>
+        <literal>
+            <nombre>13</nombre>
+            <descripcion> Practicar o propiciar juegos de azar, rifas u otros como la ouija, etc, con miembros de la 
+                comunidad educativa, al interior de las instalaciones del SENA, sin autorización de la instancia 
+                competente. 
+            </descripcion>
+        </literal>
+        <literal>
+            <nombre>14</nombre>
+            <descripcion> Realizar acciones proselitistas de carácter político o religioso dentro de las instalaciones del 
+                SENA y demás ambientes donde se desarrollen actividades formativas, así como propiciar 
+                actos indecorosos, de acoso, maltrato físico y/o mental, o conductas que puedan afectar a 
+                cualquier miembro de la comunidad educativa. 
+            </descripcion>
+        </literal>
+        <literal>
+            <nombre>15</nombre>
+            <descripcion> Permanecer con el uniforme acordado para el programa de formación de la especialidad, en 
+                situaciones o lugares ajenos al proceso de aprendizaje, que deterioren la imagen institucional. 
+            </descripcion>
+        </literal>
+        <literal>
+            <nombre>16</nombre>
+            <descripcion> Generar, transmitir, publicar o enviar información confidencial, de circulación restringida, 
+                inadecuada, malintencionada, violenta, pornográfica, insultos o agresiones por los medios de 
+                comunicación físicos o electrónicos, disponibles para su proceso de aprendizaje. 
+            </descripcion>
+        </literal>
+        <literal>
+            <nombre>17</nombre>
+            <descripcion> Todo acto que sabotee, perturbe o impida las actividades de formación, administrativas y de 
+                bienestar que se realicen en la entidad o en los sitios donde se le represente. 
+            </descripcion>
+        </literal>
+        <literal>
+            <nombre>18</nombre>
+            <descripcion> Realizar comportamientos contrarios a la normativa SENA en lugares donde se adelanten 
+                eventos de formación nacional o internacional, que atenten contra la imagen del SENA o del país. 
+            </descripcion>
+        </literal>
+        <literal>
+            <nombre>19</nombre>
+            <descripcion> Incumplir con la fecha límite de reintegro al Centro de Formación después de haber participado 
+                en un programa de movilidad estudiantil nacional o internacional. 
+            </descripcion>
+        </literal>
+        <literal>
+            <nombre>20</nombre>
+            <descripcion> Incumplir las normas de convivencia establecidas en cada Centro de Formación o internado 
+            </descripcion>
+        </literal>
+        <literal>
+            <nombre>21</nombre>
+            <descripcion> Suplantar identidad durante el proceso de formación. 
+            </descripcion>
+        </literal>
+        <literal>
+            <nombre>22</nombre>
+            <descripcion> Ingresar o salir de cualquier instalación del Centro de Formación o de la entidad donde se 
+                desarrolle la formación, por sitios diferentes a la portería, saltando muros, cercas o violentando 
+                puertas, ventanas y cerraduras. 
+            </descripcion>
+        </literal>
+        <literal>
+            <nombre>23</nombre>
+            <descripcion> Alterar, adulterar, falsificar o sustraer documentos oficiales, calificaciones, evaluaciones o 
+                firmas correspondientes al SENA o emitidos por ella. 
+            </descripcion>
+        </literal>
+        <literal>
+            <nombre>24</nombre>
+            <descripcion> Elaborar escritos o mensajes satíricos, dibujar y/o escribir sobre cualquier superficie, objeto 
+                o mueble de las instalaciones donde se desarrollan programas de formación; o pegar avisos, 
+                carteles, pancartas o análogos en sitios no autorizados. 
+            </descripcion>
+        </literal>
+        <literal>
+            <nombre>25</nombre>
+            <descripcion> Propiciar conductas, propuestas o actos inmorales hacia cualquier miembro de la comunidad 
+                educativa, que atenten contra la integridad física, moral y/o psicológica. 
+            </descripcion>
+        </literal>
+        <literal>
+            <nombre>26</nombre>
+            <descripcion> Incumplir con las entrevistas o procesos de selección a los que ha sido citado por las empresas 
+                patrocinadoras para la consecución de su contrato de aprendizaje. 
+            </descripcion>
+        </literal>
+        <literal>
+            <nombre>27</nombre>
+            <descripcion> Cometer faltas en el desarrollo del contrato de aprendizaje que originen la finalización 
+                unilateral del contrato por parte de la empresa patrocinadora con justa causa y agotado el 
+                debido proceso. 
+            </descripcion>
+        </literal>
+        <literal>
+            <nombre>28</nombre>
+            <descripcion> Firmar contratos de aprendizaje sin realizar la gestión a través del Sistema Gestión Virtual 
+                de aprendices, o sin encontrarse registrado como aprendiz disponible en dicha plataforma. 
+            </descripcion>
+        </literal>
+        <literal>
+            <nombre>29</nombre>
+            <descripcion> Incumplir con la presentación de documentos establecidos en el sistema de gestión virtual 
+                de aprendices y los emitidos por la oficina de relaciones corporativas del Centro de Formación 
+                respectivo, para acceder al contrato de aprendizaje. 
+            </descripcion>
+        </literal>
+    </articulo>
+</capitulo>
+</reglamento>
