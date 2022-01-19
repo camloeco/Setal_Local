@@ -53,24 +53,23 @@
                                 <div class="row">
                                     <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7">
                                         <label class="control-label">¿Requiere espacio en la BlackBoard?</label><br>
-                                        <input type="radio" name="fic_car_blackboard" id="fic_car_blackboard" value="si"> Si <br>
-                                        <input type="radio" name="fic_car_blackboard" id="fic_car_blackboard" value="no"> No
+                                        <input type="radio" name="fic_car_blackboard" id="fic_car_blackboard" value="1"> Si <br>
+                                        <input type="radio" name="fic_car_blackboard" id="fic_car_blackboard" value="2"> No
                                     </div>
                                     <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
                                         <label class="control-label">Tipo de formación</label><br>
-                                        <input type="radio" name="pla_tip_ofe_id" id="pla_tip_ofe_id" value="abierta"> Abierta <br>
-                                        <input type="radio" name="pla_tip_ofe_id" id="pla_tip_ofe_id" value="cerrada"> Cerrada
+                                        <input type="radio" name="pla_tip_ofe_id" id="pla_tip_ofe_id" value="1"> Abierta <br>
+                                        <input type="radio" name="pla_tip_ofe_id" id="pla_tip_ofe_id" value="2"> Cerrada
                                     </div>
                                 </div>
                             </div>
                             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
                                 <label class="control-label">Nivel de formación</label><br>
-                                <input type="radio" name="niv_for_id" id="niv_for_id" value="titulada"> Titulada <br>
-                                <input type="radio" name="niv_for_id" id="niv_for_id" value="operario"> Operario <br>
-                                <input type="radio" name="niv_for_id" id="niv_for_id" value="tecnico"> Técnico <br>
-                                <input type="radio" name="niv_for_id" id="niv_for_id" value="tecnico"> Tecnólogo <br>
-                                <!-- <input type="radio" name="niv_for_id" id="niv_for_id" value="tecnologo"> Especialización Tecnológica <br> -->
-                                <input type="radio" name="niv_for_id" id="niv_for_id" value="complementaria"> Complementaria
+                                <input type="radio" name="niv_for_id" id="niv_for_id" value="0"> Titulada <br>
+                                <input type="radio" name="niv_for_id" id="niv_for_id" value="1"> Operario <br>
+                                <input type="radio" name="niv_for_id" id="niv_for_id" value="2"> Técnico <br>
+                                <input type="radio" name="niv_for_id" id="niv_for_id" value="4"> Tecnólogo <br>
+                                <input type="radio" name="niv_for_id" id="niv_for_id" value="6"> Complementario
                             </div>
                         </div><br>
                         <!-- <div class="row" id="">
@@ -141,107 +140,113 @@
                                         <tr>
                                             <td>
                                                 Lunes
+                                                <input type="hidden" name="fic_car_hor_lunes" id="fic_car_hor_lunes" value="Lunes">
                                             </td>
                                             <td>
-                                                <select data-rel="chosen" id="" name="" class="js-example-basic-single form-control" required="required">
+                                                <select data-rel="chosen" id="pla_amb_id_lunes" name="pla_amb_id_lunes" class="js-example-basic-single form-control" required="required">
                                                     <option value="">-- Seleccione el ambiente de formaci&oacute;n --</option>
                                                     @foreach($ambientes as $ambiente)
-                                                        <option value="{{ $ambiente->id }}">{{ $ambiente->descripcion }}</option>
+                                                        <option value="{{ $ambiente->pla_amb_id }}">{{ $ambiente->pla_amb_descripcion }}</option>
                                                     @endforeach
                                                 </select>
                                             </td>
-                                            <td><input type="time" class="form-control" name="" id=""></td>
-                                            <td><input type="time" class="form-control" name="" id=""></td>
+                                            <td><input type="time" class="form-control" name="fic_car_hor_inicio_lunes" id="fic_car_hor_inicio_lunes"></td>
+                                            <td><input type="time" class="form-control" name="fic_car_hor_fin_lunes" id="fic_car_hor_fin_lunes"></td>
                                         </tr>
                                         <tr>
                                             <td>
                                                 Martes
+                                                <input type="hidden" name="fic_car_hor_dia" id="fic_car_hor_dia" value="Martes">
                                             </td>
                                             <td>
-                                                <select data-rel="chosen" id="" name="" class="js-example-basic-single form-control" required="required">
+                                                <select data-rel="chosen" id="pla_amb_id" name="pla_amb_id" class="js-example-basic-single form-control" required="required">
                                                     <option value="">-- Seleccione el ambiente de formaci&oacute;n --</option>
                                                     @foreach($ambientes as $ambiente)
-                                                        <option value="{{ $ambiente->id }}">{{ $ambiente->descripcion }}</option>
+                                                        <option value="{{ $ambiente->pla_amb_id }}">{{ $ambiente->pla_amb_descripcion }}</option>
                                                     @endforeach
                                                 </select>
                                             </td>
-                                            <td><input type="time" class="form-control" name="" id=""></td>
-                                            <td><input type="time" class="form-control" name="" id=""></td>
+                                            <td><input type="time" class="form-control" name="fic_car_hor_inicio" id="fic_car_hor_inicio"></td>
+                                            <td><input type="time" class="form-control" name="fic_car_hor_fin" id="fic_car_hor_fin"></td>
                                         </tr>
                                         <tr>
                                             <td>
                                                 Miercoles
+                                                <input type="hidden" name="fic_car_hor_dia" id="fic_car_hor_dia" value="Miercoles">
                                             </td>
                                             <td>
-                                                <select data-rel="chosen" id="" name="" class="js-example-basic-single form-control" required="required">
+                                                <select data-rel="chosen" id="pla_amb_id" name="pla_amb_id" class="js-example-basic-single form-control" required="required">
                                                     <option value="">-- Seleccione el ambiente de formaci&oacute;n --</option>
                                                     @foreach($ambientes as $ambiente)
-                                                        <option value="{{ $ambiente->id }}">{{ $ambiente->descripcion }}</option>
+                                                        <option value="{{ $ambiente->pla_amb_id }}">{{ $ambiente->pla_amb_descripcion }}</option>
                                                     @endforeach
                                                 </select>
                                             </td>
-                                            <td><input type="time" class="form-control" name="" id=""></td>
-                                            <td><input type="time" class="form-control" name="" id=""></td>
+                                            <td><input type="time" class="form-control" name="fic_car_hor_inicio" id="fic_car_hor_inicio"></td>
+                                            <td><input type="time" class="form-control" name="fic_car_hor_fin" id="fic_car_hor_fin"></td>
                                         </tr>
                                         <tr>
                                             <td>
                                                 Jueves
+                                                <input type="hidden" name="fic_car_hor_dia" id="fic_car_hor_dia" value="Jueves">
                                             </td>
                                             <td>
-                                                <select data-rel="chosen" id="" name="" class="js-example-basic-single form-control" required="required">
+                                                <select data-rel="chosen" id="pla_amb_id" name="pla_amb_id" class="js-example-basic-single form-control" required="required">
                                                     <option value="">-- Seleccione el ambiente de formaci&oacute;n --</option>
                                                     @foreach($ambientes as $ambiente)
-                                                        <option value="{{ $ambiente->id }}">{{ $ambiente->descripcion }}</option>
+                                                        <option value="{{ $ambiente->pla_amb_id }}">{{ $ambiente->pla_amb_descripcion }}</option>
                                                     @endforeach
                                                 </select>
                                             </td>
-                                            <td><input type="time" class="form-control" name="" id=""></td>
-                                            <td><input type="time" class="form-control" name="" id=""></td>
+                                            <td><input type="time" class="form-control" name="fic_car_hor_inicio" id="fic_car_hor_inicio"></td>
+                                            <td><input type="time" class="form-control" name="fic_car_hor_fin" id="fic_car_hor_fin"></td>
                                         </tr>
                                         <tr>
                                             <td>
                                                 Viernes
+                                                <input type="hidden" name="fic_car_hor_dia" id="fic_car_hor_dia" value="Viernes">
                                             </td>
                                             <td>
-                                                <select data-rel="chosen" id="" name="" class="js-example-basic-single form-control" required="required">
+                                                <select data-rel="chosen" id="pla_amb_id" name="pla_amb_id" class="js-example-basic-single form-control" required="required">
                                                     <option value="">-- Seleccione el ambiente de formaci&oacute;n --</option>
                                                     @foreach($ambientes as $ambiente)
-                                                        <option value="{{ $ambiente->id }}">{{ $ambiente->descripcion }}</option>
+                                                        <option value="{{ $ambiente->pla_amb_id }}">{{ $ambiente->pla_amb_descripcion }}</option>
                                                     @endforeach
                                                 </select>
                                             </td>
-                                            <td><input type="time" class="form-control" name="" id=""></td>
-                                            <td><input type="time" class="form-control" name="" id=""></td>
+                                            <td><input type="time" class="form-control" name="fic_car_hor_inicio" id="fic_car_hor_inicio"></td>
+                                            <td><input type="time" class="form-control" name="fic_car_hor_fin" id="fic_car_hor_fin"></td>
                                         </tr>
                                         <tr>
                                             <td>
                                                 Sabado
+                                                <input type="hidden" name="fic_car_hor_dia" id="fic_car_hor_dia" value="Sabado">
                                             </td>
                                             <td>
-                                                <select data-rel="chosen" id="" name="" class="js-example-basic-single form-control" required="required">
+                                                <select data-rel="chosen" id="pla_amb_id" name="pla_amb_id" class="js-example-basic-single form-control" required="required">
                                                     <option value="">-- Seleccione el ambiente de formaci&oacute;n --</option>
                                                     @foreach($ambientes as $ambiente)
-                                                        <option value="{{ $ambiente->id }}">{{ $ambiente->descripcion }}</option>
+                                                        <option value="{{ $ambiente->pla_amb_id }}">{{ $ambiente->pla_amb_descripcion }}</option>
                                                     @endforeach
                                                 </select>
                                             </td>
-                                            <td><input type="time" class="form-control" name="" id=""></td>
-                                            <td><input type="time" class="form-control" name="" id=""></td>
+                                            <td><input type="time" class="form-control" name="fic_car_hor_inicio" id="fic_car_hor_inicio"></td>
+                                            <td><input type="time" class="form-control" name="fic_car_hor_fin" id="fic_car_hor_fin"></td>
                                         </tr>
                                         <!-- <tr>
                                             <td>
                                                 Domingo
                                             </td>
                                             <td>
-                                                <select data-rel="chosen" id="" name="" class="js-example-basic-single form-control" required="required">
+                                                <select data-rel="chosen" id="pla_amb_id" name="pla_amb_id" class="js-example-basic-single form-control" required="required">
                                                     <option value="">-- Seleccione el ambiente de formaci&oacute;n --</option>
                                                     @foreach($ambientes as $ambiente)
-                                                        <option value="{{ $ambiente->id }}">{{ $ambiente->descripcion }}</option>
+                                                        <option value="{{ $ambiente->pla_amb_id }}">{{ $ambiente->pla_amb_descripcion }}</option>
                                                     @endforeach
                                                 </select>
                                             </td>
-                                            <td><input type="time" class="form-control" name="" id=""></td>
-                                            <td><input type="time" class="form-control" name="" id=""></td>
+                                            <td><input type="time" class="form-control" name="fic_car_hor_inicio" id="fic_car_hor_inicio"></td>
+                                            <td><input type="time" class="form-control" name="fic_car_hor_fin" id="fic_car_hor_fin"></td>
                                         </tr> -->
                                     </tbody>
                                 </table>
@@ -250,7 +255,7 @@
                         <div class="row">
                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                                 <label class="control-label">Nombre del instructor</label>
-                                <select data-rel="chosen" id="" name="" class="js-example-basic-single form-control" required="required">
+                                <select data-rel="chosen" id="par_identificacion" name="par_identificacion" class="js-example-basic-single form-control" required="required">
                                     <option value="">-- Seleccione el ambiente de formaci&oacute;n --</option>
                                     @foreach($participante as $participante)
                                         <option value="{{ $participante->par_identificacion }}">{{ $participante->par_nombres}} {{ $participante->par_apellidos }}</option>
@@ -301,8 +306,8 @@
                         </div><br> -->
                         <div class="row">
                             <div class="text-center">
-								<input type="hidden" name="_token" value="{{ csrf_token() }}">
-								<input type="button" class="btn btn-success" id="botonGuardar" value="Guardar cambios">
+								<input type="hidden" name="_token" id="_token" value="{{ csrf_token() }}">
+								<input type="button" class="btn btn-success" data-url="cargar" id="botonGuardar" value="Guardar cambios">
 							</div>
                         </div>
                     </div>
@@ -321,22 +326,32 @@
 
     $(document).ready(function () {
 
-        $(document).on('click','#botonAprobar',function () {
+        $(document).on('click','#botonGuardar',function () {
             var url = $(this).attr('data-url');
-            var fic_car_id = $(this).attr('data-id');
-            var acc = $(this).attr('data-acc');
+
+
+            var prog_codigo = $('#prog_codigo').val();
+            var prog_codigo_version = $('#prog_codigo_version').val();
+            var fic_car_blackboard = $('#fic_car_blackboard').val();
+            var pla_tip_ofe_id = $('#pla_tip_ofe_id').val();
+            var niv_for_id = $('#niv_for_id').val();
+            var par_identificacion = $('#par_identificacion').val();
+
+            var fic_car_hor_lunes = $('#fic_car_hor_lunes').val();
+            var pla_amb_id_lunes = $('#pla_amb_id_lunes').val();
+            var fic_car_hor_inicio_lunes = $('#fic_car_hor_inicio_lunes').val();
+            var fic_car_hor_fin_lunes = $('#fic_car_hor_fin_lunes').val();
+
+
             var _token = $('#_token').val();
-            var opcion = confirm('¿Esta seguro de APROBAR la solicitud No. '+fic_car_id+'?');
-            if (opcion == true) {
-                $.ajax({
-                    url: url,
-                    type: "POST",
-                    data: "fic_car_id="+fic_car_id+"&acc="+acc+"&_token="+_token,
-                    success: function(data){
-                        location.reload('listarCaracterizaciones');
-                    }
-                });
-            }
+            $.ajax({
+                url: url,
+                type: "POST",
+                data: "prog_codigo="+prog_codigo+"&prog_codigo_version="+prog_codigo_version+"&fic_car_blackboard="+fic_car_blackboard+"&pla_tip_ofe_id="+pla_tip_ofe_id+"&niv_for_id="+niv_for_id+"&fic_car_hor_lunes="+fic_car_hor_lunes+"&pla_amb_id="+pla_amb_id+"&fic_car_hor_inicio_lunes="+fic_car_hor_inicio_lunes+"&fic_car_hor_fin_lunes="+fic_car_hor_fin_lunes+"&par_identificacion="+par_identificacion+"&_token="+_token,
+                success: function(data){
+                    location.reload('listarCaracterizaciones');
+                }
+            });
         });
 
     });

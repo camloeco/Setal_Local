@@ -1367,8 +1367,8 @@ class FichaController extends Controller {
 		$sql = "SELECT prog_codigo, prog_nombre FROM sep_programa WHERE prog_codigo NOT IN('1','0','') ORDER BY prog_nombre";
         $programas = DB::select($sql);
 
-		$sql = "SELECT id, descripcion FROM sep_ingreso_ambiente ORDER BY descripcion";
-        $ambientes = DB::select($sql);
+		$sql = "SELECT pla_amb_id,pla_amb_descripcion FROM sep_planeacion_ambiente WHERE pla_amb_estado = 'Activo' AND NOT pla_amb_id IN(72,123) AND pla_amb_tipo != 'Restriccion' ORDER BY pla_amb_descripcion asc";
+		$ambientes = DB::select($sql);
 		
 		$sql="SELECT * FROM users u, sep_participante p WHERE u.par_identificacion = p.par_identificacion AND p.rol_id = 2 ORDER BY p.par_nombres ASC";
 		// $sql = "SELECT par_identificacion, par_nombres, par_apellidos FROM sep_participante p WHERE rol_id = 2 ORDER BY par_apellidos";
@@ -1380,27 +1380,18 @@ class FichaController extends Controller {
 	public function postCargar()
 	{
 		extract($_POST);
-        $sql = "INSERT INTO sep_ficha_caracterizacion(fic_car_nombre,fic_car_est_id) VALUES('$fic_car_nombre',1)";
+        $sql = "INSERT INTO sep_ficha_caracterizacion(prog_codigo,prog_codigo_version,fic_car_blackboard,pla_tip_ofe_id,niv_for_id,par_identificacion,fic_car_est_id) VALUES('$prog_codigo','$prog_codigo_version','$fic_car_blackboard','$pla_tip_ofe_id','$niv_for_id','$par_identificacion',1)";
         DB::insert($sql);
+
+		// if ($insert_sep_ficha_caracterizacion) {
+		// 	$sql = "INSERT INTO sep_ficha_caracterizacion_horario(fic_car_hor_dia,fic_car_hor_hora_inicio,fic_car_hor_hora_fin,pla_amb_id) VALUES('$fic_car_hor_dia','$fic_car_hor_hora_inicio','$fic_car_hor_hora_fin','$pla_amb_id_lunes) WHERE fic_car_id = ";
+        // 	DB::insert($sql);
+		// }
 	}
 
 	public function getListarcaracterizaciones()
 	{
-		$sql = "SELECT 
-			fc.fic_car_id, 
-			fc.prog_codigo, 
-			fc.prog_codigo_version,
-			fic_car_blackboard,
-			pla_tip_ofe_id,
-			niv_for_id,
-			fic_car_fec_diligenciada,
-			fc.fic_car_est_id,
-			e.fic_car_est_descripcion,
-			FROM 
-			sep_ficha_caracterizacion fc, 
-			sep_ficha_caracterizacion_estado e 
-			WHERE 
-			fc.fic_car_est_id = e.fic_car_est_id";
+		$sql = "SELECT fc.fic_car_id, fc.prog_codigo, fc.prog_codigo_version, fc.fic_car_blackboard, fc.pla_tip_ofe_id, fc.niv_for_id, fc.fic_car_fec_diligenciada, fc.fic_car_est_id, e.fic_car_est_descripcion, p.prog_nombre,tpo.pla_tip_ofe_id, tpo.pla_tip_ofe_descripcion, nf.niv_for_id, nf.niv_for_nombre, pa.par_identificacion, pa.par_nombres, pa.par_apellidos FROM sep_ficha_caracterizacion fc, sep_ficha_caracterizacion_estado e, sep_programa p, sep_planeacion_tipo_oferta tpo, sep_nivel_formacion nf, sep_participante pa WHERE fc.fic_car_est_id = e.fic_car_est_id AND p.prog_codigo = fc.prog_codigo AND fc.pla_tip_ofe_id = tpo.pla_tip_ofe_id AND fc.niv_for_id = nf.niv_for_id AND pa.par_identificacion = fc.par_identificacion";
         $data = DB::select($sql);
 
 		$rol = \Auth::user()->participante->rol_id;

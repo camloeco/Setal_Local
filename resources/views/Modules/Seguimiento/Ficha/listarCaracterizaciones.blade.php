@@ -57,9 +57,12 @@
                             <thead class="thead-inverse">
                                 <tr>
                                     <th>ID</th>
-                                    <th>Nombre</th>
+                                    <th>Programa</th>
+                                    <th>Oferta</th>
+                                    <th>Nivel de formacion</th>
                                     <th>Estado</th>
-                                    <th>Acción</th>
+                                    <th>Fecha diligenciada</th>
+                                    <th>Acciones</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -67,7 +70,9 @@
                                     @foreach ($data as $fic)
                                         <tr>
                                             <td>{{ $fic->fic_car_id }}</td>
-                                            <td>{{ $fic->fic_car_nombre }}</td>
+                                            <td>{{ $fic->prog_nombre }}</td>
+                                            <td>{{ $fic->pla_tip_ofe_descripcion }}</td>
+                                            <td>{{ $fic->niv_for_nombre }}</td>
                                             <td>
                                                 @if ($fic->fic_car_est_id == 1)
                                                     <span class="tag tag-info">Solicitada</span>
@@ -81,6 +86,7 @@
                                                     <span class="tag tag-success">Creada</span>
                                                 @endif
                                             </td>
+                                            <td>{{ $fic->fic_car_fec_diligenciada }}</td>
                                             @if ($rol == 2) <!-- Rol de instructor -->
                                                 <td>
                                                     <a id="botonVer" data-url="accion" data-id="{{ $fic->fic_car_id }}" style="cursor: pointer; margin-right: 60px;">Ver</a>
@@ -117,7 +123,7 @@
                                     @endforeach
                                 @else
                                     <tr>
-                                        <td colspan="4"><p class="text-center">Ningún registro añadido</p></td>
+                                        <td colspan="7"><p class="text-center">Ningún registro añadido</p></td>
                                     </tr>
                                 @endif
                             </tbody>
