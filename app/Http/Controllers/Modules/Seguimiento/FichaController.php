@@ -1414,7 +1414,35 @@ class FichaController extends Controller {
 
 	public function getListarcaracterizaciones()
 	{
-		$sql = "SELECT fc.fic_car_id, fc.prog_codigo, fc.prog_codigo_version, fc.fic_car_blackboard, fc.pla_tip_ofe_id, fc.niv_for_id, fc.fic_car_fec_diligenciada, fc.fic_car_est_id, e.fic_car_est_descripcion, p.prog_nombre,tpo.pla_tip_ofe_id, tpo.pla_tip_ofe_descripcion, nf.niv_for_id, nf.niv_for_nombre, pa.par_identificacion, pa.par_nombres, pa.par_apellidos FROM sep_ficha_caracterizacion fc, sep_ficha_caracterizacion_estado e, sep_programa p, sep_planeacion_tipo_oferta tpo, sep_nivel_formacion nf, sep_participante pa WHERE fc.fic_car_est_id = e.fic_car_est_id AND p.prog_codigo = fc.prog_codigo AND fc.pla_tip_ofe_id = tpo.pla_tip_ofe_id AND fc.niv_for_id = nf.niv_for_id AND pa.par_identificacion = fc.par_identificacion";
+		$sql = "SELECT 
+		fc.fic_car_id, fc.prog_codigo, 
+		fc.prog_codigo_version, 
+		fc.fic_car_blackboard, 
+		fc.pla_tip_ofe_id, 
+		fc.niv_for_id, 
+		fc.fic_car_fec_diligenciada, 
+		fc.fic_car_est_id, 
+		e.fic_car_est_descripcion, 
+		p.prog_nombre, 
+		tpo.pla_tip_ofe_id, 
+		tpo.pla_tip_ofe_descripcion, 
+		nf.niv_for_id, nf.niv_for_nombre, 
+		pa.par_identificacion, 
+		pa.par_nombres, 
+		pa.par_apellidos 
+		FROM 
+		sep_ficha_caracterizacion fc, 
+		sep_ficha_caracterizacion_estado e, 
+		sep_programa p, 
+		sep_planeacion_tipo_oferta tpo, 
+		sep_nivel_formacion nf, 
+		sep_participante pa 
+		WHERE 
+		fc.fic_car_est_id = e.fic_car_est_id AND 
+		p.prog_codigo = fc.prog_codigo AND 
+		fc.pla_tip_ofe_id = tpo.pla_tip_ofe_id AND 
+		fc.niv_for_id = nf.niv_for_id AND 
+		pa.par_identificacion = fc.par_identificacion";
         $data = DB::select($sql);
 
 		$rol = \Auth::user()->participante->rol_id;

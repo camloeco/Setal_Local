@@ -90,7 +90,7 @@
                                             <td>{{ $fic->fic_car_fec_diligenciada }}</td>
                                             @if ($rol == 2) <!-- Rol de instructor -->
                                                 <td>
-                                                    <a id="botonVer" data-url="accion" data-id="{{ $fic->fic_car_id }}" style="cursor: pointer; margin-right: 60px;">Ver</a>
+                                                    <a id="botonVer" data-url="accion" data-id="{{ $fic->fic_car_id }}" data-prog-codigo="{{ $fic->prog_codigo }}" data-prog-version="{{ $fic->prog_codigo_version }}" data-prog-nombre="{{ $fic->prog_nombre }}" data-blackboard="{{ $fic->fic_car_blackboard }}" data-tip-ofe="{{ $fic->pla_tip_ofe_descripcion }}" data-niv-for="{{ $fic->niv_for_nombre }}" data-par-id="{{ $fic->par_identificacion }}" data-par-nombre="{{ $fic->par_nombres }}" data-par-apellidos="{{ $fic->par_apellidos }}" data-fec-dil="{{ $fic->fic_car_fec_diligenciada }}" style="cursor: pointer; margin-right: 60px;">Ver</a>
                                                     @if ($fic->fic_car_est_id == 2)
                                                         <button id="botonReenviar" data-url="accion" data-acc="rs" data-id="{{ $fic->fic_car_id }}" class="btn btn-info btn-xs" style="margin: 0px;">Reenviar</button>
                                                     @endif
@@ -148,17 +148,17 @@
                     <tbody class="thead-inverse">
                         <tr>
                             <td><strong>Programa</strong></td>
-                            <td colspan="3">ANÁLISIS Y DESARROLLO DE SISTEMAS DE INFORMACIÓN</td>
+                            <td colspan="3"><span id="prog_nombre"></span></td>
                             <td><strong>Versión</strong></td>
-                            <td style="text-align: center;">1</td>
+                            <td style="text-align: center;"><span id="prog_codigo_version"></span></td>
                         </tr>
                         <tr>
                             <td><strong>Territorium</strong></td>
-                            <td style="text-align: center;">Si</td>
+                            <td style="text-align: center;"><span id="fic_car_blackboard"></span></td>
                             <td><strong>Tipo de formación</strong></td>
-                            <td style="text-align: center;">Abierta</td>
+                            <td style="text-align: center;"><span id="pla_tip_ofe_descripcion"></span></td>
                             <td><strong>Nivel</strong></td>
-                            <td style="text-align: center;">Tecnólogo</td>
+                            <td style="text-align: center;"><span id="niv_for_nombre"></span></td>
                         </tr>
                         <tr>
                             <td colspan="6" style="text-align: center;"><strong>HORARIO</strong></td>
@@ -216,7 +216,7 @@
                         </tr> -->
                         <tr>
                             <td><strong>Instructor</strong></td>
-                            <td colspan="5">Andres Fernando Sanchez Solarte</td>
+                            <td colspan="5"><span id="par_nombres_apellidos"></span></td>
                         </tr>
                     </tbody>
                 </table>
@@ -284,6 +284,25 @@
         // MODAL VER
         $(document).on('click','#botonVer',function(){
             $('#modalVer').modal();
+            var prog_codigo = $(this).attr('data-prog-codigo');
+            var prog_codigo_version = $(this).attr('data-prog-version');
+            var prog_nombre = $(this).attr('data-prog-nombre');
+            var fic_car_blackboard = $(this).attr('data-blackboard');
+            var pla_tip_ofe_descripcion = $(this).attr('data-tip-ofe');
+            var niv_for_nombre = $(this).attr('data-niv-for');
+            var par_identificacion = $(this).attr('data-par-id');
+            var par_nombres = $(this).attr('data-par-nombre');
+            var par_apellidos = $(this).attr('data-par-apellidos');
+            var fic_car_fec_diligenciada = $(this).attr('data-fec-dil');
+            $('#prog_codigo').html(prog_codigo);
+            $('#prog_codigo_version').html(prog_codigo_version);
+            $('#prog_nombre').html(prog_nombre);
+            $('#fic_car_blackboard').html(fic_car_blackboard);
+            $('#pla_tip_ofe_descripcion').html(pla_tip_ofe_descripcion);
+            $('#niv_for_nombre').html(niv_for_nombre);
+            $('#par_identificacion').html(par_identificacion);
+            $('#par_nombres_apellidos').html(par_nombres+' '+par_apellidos);
+            $('#fic_car_fec_diligenciada').html(fic_car_fec_diligenciada);
         });
 
         // MODAL REENVIAR
