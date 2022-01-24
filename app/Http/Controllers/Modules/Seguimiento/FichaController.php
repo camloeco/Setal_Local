@@ -1370,23 +1370,46 @@ class FichaController extends Controller {
 		$sql = "SELECT pla_amb_id,pla_amb_descripcion FROM sep_planeacion_ambiente WHERE pla_amb_estado = 'Activo' AND NOT pla_amb_id IN(72,123) AND pla_amb_tipo != 'Restriccion' ORDER BY pla_amb_descripcion asc";
 		$ambientes = DB::select($sql);
 		
-		$sql="SELECT * FROM users u, sep_participante p WHERE u.par_identificacion = p.par_identificacion AND p.rol_id = 2 ORDER BY p.par_nombres ASC";
+		$sql = "SELECT * FROM users u, sep_participante p WHERE u.par_identificacion = p.par_identificacion AND p.rol_id = 2 ORDER BY p.par_nombres ASC";
 		// $sql = "SELECT par_identificacion, par_nombres, par_apellidos FROM sep_participante p WHERE rol_id = 2 ORDER BY par_apellidos";
         $participante = DB::select($sql);
 
-        return view('Modules.Seguimiento.Ficha.indexInstructorForm', compact('programas', 'ambientes', 'participante'));
+		$sql = "SELECT * FROM sep_planeacion_tipo_oferta";
+		$tipo_oferta = DB::select($sql);
+
+		$sql = "SELECT * FROM sep_nivel_formacion";
+		$nivel_formacion = DB::select($sql);
+		
+        return view('Modules.Seguimiento.Ficha.indexInstructorForm', compact('programas', 'ambientes', 'participante', 'tipo_oferta', 'nivel_formacion'));
 	}
 
 	public function postCargar()
 	{
 		extract($_POST);
-        $sql = "INSERT INTO sep_ficha_caracterizacion(prog_codigo,prog_codigo_version,fic_car_blackboard,pla_tip_ofe_id,niv_for_id,par_identificacion,fic_car_est_id) VALUES('$prog_codigo','$prog_codigo_version','$fic_car_blackboard','$pla_tip_ofe_id','$niv_for_id','$par_identificacion',1)";
-        DB::insert($sql);
 
-		// if ($insert_sep_ficha_caracterizacion) {
-		// 	$sql = "INSERT INTO sep_ficha_caracterizacion_horario(fic_car_hor_dia,fic_car_hor_hora_inicio,fic_car_hor_hora_fin,pla_amb_id) VALUES('$fic_car_hor_dia','$fic_car_hor_hora_inicio','$fic_car_hor_hora_fin','$pla_amb_id_lunes) WHERE fic_car_id = ";
-        // 	DB::insert($sql);
-		// }
+        $sql = "INSERT INTO sep_ficha_caracterizacion(prog_codigo,prog_codigo_version,fic_car_blackboard,pla_tip_ofe_id,niv_for_id,par_identificacion,fic_car_fec_diligenciada,fic_car_est_id) VALUES('$prog_codigo','$prog_codigo_version','$fic_car_blackboard','$pla_tip_ofe_id','$niv_for_id','$par_identificacion',CURRENT_DATE(),1)";
+        $insert = DB::insert($sql);
+
+		$sql = "SELECT MAX(fic_car_id) AS fic_car_last_id FROM sep_ficha_caracterizacion";
+		$fic_car_id = DB::select($sql);
+		
+		if ($insert) {
+
+			for ($i=1; $i <= 6; $i++) {
+
+				$fic_car_hor_dia = $_POST['fic_car_hor_dia_'.$i];
+				$fic_car_hor_hora_inicio = $_POST['fic_car_hor_hora_inicio_'.$i];
+				$fic_car_hor_hora_fin = $_POST['fic_car_hor_hora_fin_'.$i];
+				$pla_amb_id = $_POST['pla_amb_id_'.$i];
+
+				foreach ($fic_car_id as $fci) {
+					$sql = "INSERT INTO sep_ficha_caracterizacion_horario(fic_car_hor_dia,fic_car_id,fic_car_hor_hora_inicio,fic_car_hor_hora_fin,pla_amb_id) VALUES('$fic_car_hor_dia','$fci->fic_car_last_id','$fic_car_hor_hora_inicio','$fic_car_hor_hora_fin','$pla_amb_id')";
+					DB::insert($sql);
+				}
+			}
+		}
+
+		return view('Modules.Seguimiento.Ficha.listarCaracterizaciones');
 	}
 
 	public function getListarcaracterizaciones()

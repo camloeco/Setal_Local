@@ -57,7 +57,7 @@
                             <thead class="thead-inverse">
                                 <tr>
                                     <th>ID</th>
-                                    <th>Programa</th>
+                                    <th>Instructor</th>
                                     <th>Oferta</th>
                                     <th>Nivel de formacion</th>
                                     <th>Estado</th>
@@ -66,11 +66,12 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                <?php $i = 1 ?>
                                 @if (!empty($data[0]))
                                     @foreach ($data as $fic)
                                         <tr>
-                                            <td>{{ $fic->fic_car_id }}</td>
-                                            <td>{{ $fic->prog_nombre }}</td>
+                                            <td>{{ $i++ }}</td>
+                                            <td>{{ $fic->par_nombres }} {{ $fic->par_apellidos }}</td>
                                             <td>{{ $fic->pla_tip_ofe_descripcion }}</td>
                                             <td>{{ $fic->niv_for_nombre }}</td>
                                             <td>
@@ -136,14 +137,89 @@
 </div>
 <!-- MODAL VER-->
 <div id="modalVer" class="modal fade" role="dialog">
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
                 <h4 class="modal-title">Detalle</h4>
             </div>
             <div class="modal-body">
-                
+                <table class="table table-bordered table-responsive">
+                    <tbody class="thead-inverse">
+                        <tr>
+                            <td><strong>Programa</strong></td>
+                            <td colspan="3">ANÁLISIS Y DESARROLLO DE SISTEMAS DE INFORMACIÓN</td>
+                            <td><strong>Versión</strong></td>
+                            <td style="text-align: center;">1</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Territorium</strong></td>
+                            <td style="text-align: center;">Si</td>
+                            <td><strong>Tipo de formación</strong></td>
+                            <td style="text-align: center;">Abierta</td>
+                            <td><strong>Nivel</strong></td>
+                            <td style="text-align: center;">Tecnólogo</td>
+                        </tr>
+                        <tr>
+                            <td colspan="6" style="text-align: center;"><strong>HORARIO</strong></td>
+                        </tr>
+                        <tr>
+                            <td rowspan="2" style="text-align: center; vertical-align: middle;"><strong>DÍA</strong></td>
+                            <td colspan="3" rowspan="2" style="text-align: center; vertical-align: middle;"><strong>AMBIENTE DE FORMACIÓN</strong></td>
+                            <td colspan="2" style="text-align: center;"><strong>HORAS (24 horas)</strong></td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center;"><strong>INICIO</strong></td>
+                            <td style="text-align: center;"><strong>FIN</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Lunes</td>
+                            <td colspan="3" style="text-align: center;">C 103</td>
+                            <td>06:00 am</td>
+                            <td>12:00 pm</td>
+                        </tr>
+                        <tr>
+                            <td>Martes</td>
+                            <td colspan="3" style="text-align: center;">C 103</td>
+                            <td>06:00 am</td>
+                            <td>12:00 pm</td>
+                        </tr>
+                        <tr>
+                            <td>Miercoles</td>
+                            <td colspan="3" style="text-align: center;">C 103</td>
+                            <td>06:00 am</td>
+                            <td>12:00 pm</td>
+                        </tr>
+                        <tr>
+                            <td>Jueves</td>
+                            <td colspan="3" style="text-align: center;">C 103</td>
+                            <td>06:00 am</td>
+                            <td>12:00 pm</td>
+                        </tr>
+                        <tr>
+                            <td>Viernes</td>
+                            <td colspan="3" style="text-align: center;">C 103</td>
+                            <td>06:00 am</td>
+                            <td>12:00 pm</td>
+                        </tr>
+                        <tr>
+                            <td>Sábado</td>
+                            <td colspan="3" style="text-align: center;">C 103</td>
+                            <td>06:00 am</td>
+                            <td>12:00 pm</td>
+                        </tr>
+                        <!-- <tr>
+                            <td>Domingo</td>
+                            <td colspan="3"></td>
+                            <td></td>
+                            <td></td>
+                        </tr> -->
+                        <tr>
+                            <td><strong>Instructor</strong></td>
+                            <td colspan="5">Andres Fernando Sanchez Solarte</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
             <div class="modal-footer">
                 <input type="hidden" name="_token" id="_token" value="{{ csrf_token() }}">
