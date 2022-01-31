@@ -35,9 +35,7 @@
                             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                                 <label>Instructor</label>
                                 <div class="input-group input-group-xs filtro" name="par_identificacion_instructor">
-
                                     <input autocomplete="off" required style="border: 1px solid #ccc;padding: 2px 12px;width: 260px;" class="form-control" list="browsers" name="par_identificacion"placeholder="Escriba el documento o nombre...">
-
                                 </div>
                             </div>
                             <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
@@ -88,38 +86,31 @@
                                                 @endif
                                             </td>
                                             <td>{{ $fic->fic_car_fec_diligenciada }}</td>
-                                            @if ($rol == 2) <!-- Rol de instructor -->
                                                 <td>
-                                                    <a id="botonVer" data-url="accion" data-id="{{ $fic->fic_car_id }}" data-prog-codigo="{{ $fic->prog_codigo }}" data-prog-version="{{ $fic->prog_codigo_version }}" data-prog-nombre="{{ $fic->prog_nombre }}" data-blackboard="{{ $fic->fic_car_blackboard }}" data-tip-ofe="{{ $fic->pla_tip_ofe_descripcion }}" data-niv-for="{{ $fic->niv_for_nombre }}" data-par-id="{{ $fic->par_identificacion }}" data-par-nombre="{{ $fic->par_nombres }}" data-par-apellidos="{{ $fic->par_apellidos }}" data-fec-dil="{{ $fic->fic_car_fec_diligenciada }}" style="cursor: pointer; margin-right: 60px;">Ver</a>
-                                                    @if ($fic->fic_car_est_id == 2)
-                                                        <button id="botonReenviar" data-url="accion" data-acc="rs" data-id="{{ $fic->fic_car_id }}" class="btn btn-info btn-xs" style="margin: 0px;">Reenviar</button>
+                                                    <a id="botonVer" data-url="horarios" data-id="{{ $fic->fic_car_id }}" data-prog-codigo="{{ $fic->prog_codigo }}" data-prog-version="{{ $fic->prog_codigo_version }}" data-prog-nombre="{{ $fic->prog_nombre }}" data-blackboard="{{ $fic->fic_car_blackboard }}" data-tip-ofe="{{ $fic->pla_tip_ofe_descripcion }}" data-niv-for="{{ $fic->niv_for_nombre }}" data-par-id="{{ $fic->par_identificacion }}" data-par-nombre="{{ $fic->par_nombres }}" data-par-telefono="{{ $fic->par_telefono }}" data-par-correo="{{ $fic->par_correo }}" data-par-apellidos="{{ $fic->par_apellidos }}" data-fec-dil="{{ $fic->fic_car_fec_diligenciada }}" style="cursor: pointer; margin-right: 60px;">Ver</a>
+                                                    @if ($rol == 2) <!-- Rol de instructor -->
+                                                        @if ($fic->fic_car_est_id == 2)
+                                                            <button id="botonReenviar" data-url="accion" data-acc="rs" data-id="{{ $fic->fic_car_id }}" class="btn btn-info btn-xs" style="margin: 0px;">Reenviar</button>
+                                                        @endif
+                                                    @elseif ($rol == 3) <!-- Rol de coordinador -->
+                                                        @if ($fic->fic_car_est_id == 1)
+                                                            <button id="botonAprobar" data-url="accion" data-id="{{ $fic->fic_car_id }}" data-acc="a1" class="btn btn-success btn-xs" style="margin: 0px;">Aprobar</button>
+                                                            <button id="botonRechazar" data-url="accion" data-id="{{ $fic->fic_car_id }}" data-acc="r" class="btn btn-danger btn-xs" style="margin: 0px;">Rechazar</button>
+                                                        @endif
+                                                    @elseif ($rol == 20)  <!-- Rol de Stephanie-->
+                                                        @if ($fic->fic_car_est_id == 3)
+                                                            <button id="botonAprobar" data-url="accion" data-id="{{ $fic->fic_car_id }}" data-acc="a2" class="btn btn-success btn-xs" style="margin: 0px;">Aprobar</button>
+                                                            <button id="botonRechazar" data-url="accion" data-id="{{ $fic->fic_car_id }}" data-acc="r" class="btn btn-danger btn-xs"  style="margin: 0px;">Rechazar</button>
+                                                        @endif
+                                                    @else   <!-- PENDIENTE AVERIGÜAR EL ROL DE ANA DOLORES Y EL ID (Creación de fichas)-->
+                                                        @if ($fic->fic_car_est_id == 4)
+                                                            <button id="botonAprobar" data-url="accion" data-id="{{ $fic->fic_car_id }}" data-acc="c" class="btn btn-success btn-xs" style="margin: 0px;">Aprobar</button>
+                                                            <button id="botonRechazar" data-url="accion" data-id="{{ $fic->fic_car_id }}" data-acc="r" class="btn btn-danger btn-xs"  style="margin: 0px;">Rechazar</button>
+                                                        @endif
                                                     @endif
+                                                    
                                                 </td>
-                                            @elseif ($rol == 3) <!-- Rol de coordinador -->
                                             <td>
-                                                <a id="botonVer" style="cursor: pointer; margin-right: 60px;">ver</a>
-                                                @if ($fic->fic_car_est_id != 3 && $fic->fic_car_est_id != 4 && $fic->fic_car_est_id != 2  && $fic->fic_car_est_id != 5)
-                                                    <button id="botonAprobar" data-url="accion" data-id="{{ $fic->fic_car_id }}" data-acc="a1" class="btn btn-success btn-xs" style="margin: 0px;">Aprobar</button>
-                                                    <button id="botonRechazar" data-url="accion" data-id="{{ $fic->fic_car_id }}" data-acc="r" class="btn btn-danger btn-xs" style="margin: 0px;">Rechazar</button>
-                                                @endif
-                                            </td>
-                                            @elseif ($rol == 4)  <!-- PENDIENTE AVERIGÜAR EL ROL DE STEHPANIE Y EL ID (Administración educativa) -->
-                                                <td>
-                                                    <a id="botonVer" style="cursor: pointer; margin-right: 60px;">ver</a>
-                                                    @if ($fic->fic_car_est_id != 4 && $fic->fic_car_est_id != 2 && $fic->fic_car_est_id != 5)
-                                                        <button id="botonAprobar" data-url="accion" data-id="{{ $fic->fic_car_id }}" data-acc="a2" class="btn btn-success btn-xs" style="margin: 0px;">Aprobar</button>
-                                                        <button id="botonRechazar" data-url="accion" data-id="{{ $fic->fic_car_id }}" data-acc="r" class="btn btn-danger btn-xs"  style="margin: 0px;">Rechazar</button>
-                                                    @endif
-                                                </td>
-                                            @else   <!-- PENDIENTE AVERIGÜAR EL ROL DE ANA DOLORES Y EL ID (Creación de fichas)-->
-                                                <td>
-                                                    <a id="botonVer" style="cursor: pointer; margin-right: 60px;">ver</a>
-                                                    @if ($fic->fic_car_est_id != 5 && $fic->fic_car_est_id != 2)
-                                                        <button id="botonAprobar" data-url="accion" data-id="{{ $fic->fic_car_id }}" data-acc="c" class="btn btn-success btn-xs" style="margin: 0px;">Aprobar</button>
-                                                        <button id="botonRechazar" data-url="accion" data-id="{{ $fic->fic_car_id }}" data-acc="r" class="btn btn-danger btn-xs"  style="margin: 0px;">Rechazar</button>
-                                                    @endif
-                                                </td>
-                                            @endif
                                         </tr>
                                     @endforeach
                                 @else
@@ -172,58 +163,28 @@
                             <td style="text-align: center;"><strong>INICIO</strong></td>
                             <td style="text-align: center;"><strong>FIN</strong></td>
                         </tr>
+                        <tbody id="horarios"></tbody>
                         <tr>
-                            <td>Lunes</td>
-                            <td colspan="3" style="text-align: center;">C 103</td>
-                            <td>06:00 am</td>
-                            <td>12:00 pm</td>
+                            <td colspan="6" style="text-align: center;"><strong>INFORMACIÓN DEL INSTRUCTOR</strong></td>
                         </tr>
-                        <tr>
-                            <td>Martes</td>
-                            <td colspan="3" style="text-align: center;">C 103</td>
-                            <td>06:00 am</td>
-                            <td>12:00 pm</td>
-                        </tr>
-                        <tr>
-                            <td>Miercoles</td>
-                            <td colspan="3" style="text-align: center;">C 103</td>
-                            <td>06:00 am</td>
-                            <td>12:00 pm</td>
-                        </tr>
-                        <tr>
-                            <td>Jueves</td>
-                            <td colspan="3" style="text-align: center;">C 103</td>
-                            <td>06:00 am</td>
-                            <td>12:00 pm</td>
-                        </tr>
-                        <tr>
-                            <td>Viernes</td>
-                            <td colspan="3" style="text-align: center;">C 103</td>
-                            <td>06:00 am</td>
-                            <td>12:00 pm</td>
-                        </tr>
-                        <tr>
-                            <td>Sábado</td>
-                            <td colspan="3" style="text-align: center;">C 103</td>
-                            <td>06:00 am</td>
-                            <td>12:00 pm</td>
-                        </tr>
-                        <!-- <tr>
-                            <td>Domingo</td>
-                            <td colspan="3"></td>
-                            <td></td>
-                            <td></td>
-                        </tr> -->
                         <tr>
                             <td><strong>Instructor</strong></td>
-                            <td colspan="5"><span id="par_nombres_apellidos"></span></td>
+                            <td colspan="3" style="text-align: center;"><span id="par_nombres_apellidos"></span></td>
+                            <td><strong>C.C</strong></td>
+                            <td  style="text-align: center;"><span id="par_identificacion"></span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Teléfono</strong></td>
+                            <td colspan="3" style="text-align: center;"><span id="par_telefono"></span></td>
+                            <td><strong>Email</strong></td>
+                            <td  style="text-align: center;"><span id="par_correo"></span></td>
                         </tr>
                     </tbody>
                 </table>
             </div>
             <div class="modal-footer">
                 <input type="hidden" name="_token" id="_token" value="{{ csrf_token() }}">
-                <button class="btn btn-info btn-xs pull-left">Descargar</button>
+                <a style="margin:0px;" class="btn btn-info btn-xs pull-left btn-listado">Descargar</a>
                 <button style="margin:0px;" class="btn btn-danger btn-xs" data-dismiss="modal">Cerrar</button>
             </div>
         </div>
@@ -293,6 +254,8 @@
             var par_identificacion = $(this).attr('data-par-id');
             var par_nombres = $(this).attr('data-par-nombre');
             var par_apellidos = $(this).attr('data-par-apellidos');
+            var par_telefono = $(this).attr('data-par-telefono');
+            var par_correo = $(this).attr('data-par-correo');
             var fic_car_fec_diligenciada = $(this).attr('data-fec-dil');
             $('#prog_codigo').html(prog_codigo);
             $('#prog_codigo_version').html(prog_codigo_version);
@@ -302,7 +265,21 @@
             $('#niv_for_nombre').html(niv_for_nombre);
             $('#par_identificacion').html(par_identificacion);
             $('#par_nombres_apellidos').html(par_nombres+' '+par_apellidos);
+            $('#par_telefono').html(par_telefono);
+            $('#par_correo').html(par_correo);
             $('#fic_car_fec_diligenciada').html(fic_car_fec_diligenciada);
+			var url = $(this).attr("data-url");
+			var fic_car_id = $(this).attr("data-id");
+			$.ajax({
+				url:url,
+				type:"GET",
+				data:"fic_car_id="+fic_car_id,
+				success:function (data) {
+					$("#horarios").html(data);
+					var url = "exportardatos?fic_car_id="+fic_car_id+"";
+					$(".btn-listado").attr("href",url);
+				}
+			});
         });
 
         // MODAL REENVIAR

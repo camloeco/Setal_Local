@@ -35,9 +35,9 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                     <div class="row">
-                                        <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7">
+                                        <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
                                             <label class="control-label">Seleccionar el programa de formaci&oacute;n</label>
                                             <select data-rel="chosen" id="prog_codigo" name="prog_codigo" class="js-example-basic-single form-control" required="required">
                                                 <option value="">-- Seleccione el c&oacute;digo del programa de formaci&oacute;n --</option>
@@ -46,30 +46,39 @@
                                                 @endforeach
                                             </select><br>
                                         </div>
-                                        <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+                                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                                             <label class="control-label">Version del programa</label>
                                             <input type="number" class="form-control" name="prog_codigo_version" id="prog_codigo_version"><br>
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7">
-                                            <label class="control-label">¿Requiere espacio en la BlackBoard?</label><br>
-                                            <input type="radio" name="fic_car_blackboard" id="fic_car_blackboard" value="1"> Si <br>
-                                            <input type="radio" name="fic_car_blackboard" id="fic_car_blackboard" value="2"> No
+                                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                            <label class="control-label">¿Requiere espacio en Territorium?</label><br>
+                                            <select name="fic_car_blackboard" id="fic_car_blackboard" class="form-control">
+                                                <option value="">-- Seleccionar --</option>
+                                                <option value="Si">Si</option>
+                                                <option value="No">No</option>
+                                            </select>
                                         </div>
-                                        <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+                                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                                             <label class="control-label">Tipo de formación</label><br>
-                                            @foreach ($tipo_oferta as $to)
-                                                <input type="radio" name="pla_tip_ofe_id" id="pla_tip_ofe_id" value="{{ $to->pla_tip_ofe_id }}"> {{ $to->pla_tip_ofe_descripcion }} <br>
-                                            @endforeach
+                                            <select name="pla_tip_ofe_id" id="pla_tip_ofe_id" class="form-control">
+                                                <option value="">-- Seleccionar --</option>
+                                                @foreach ($tipo_oferta as $to)
+                                                    <option value="{{ $to->pla_tip_ofe_id }}">{{ $to->pla_tip_ofe_descripcion }}</option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+                                        <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7">
+                                            <label class="control-label">Nivel de formación</label><br>
+                                            <select name="niv_for_id" id="niv_for_id" class="form-control">
+                                                <option value="">-- Seleccionar --</option>
+                                                @foreach ($nivel_formacion as $nf)
+                                                    <option value="{{ $nf->niv_for_id }}">{{ $nf->niv_for_nombre }}</option>
+                                                @endforeach
+                                            </select>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                    <label class="control-label">Nivel de formación</label><br>
-                                    @foreach ($nivel_formacion as $nf)
-                                        <input type="radio" name="niv_for_id" id="niv_for_id" value="{{ $nf->niv_for_id }}"> {{ $nf->niv_for_nombre }} <br>
-                                    @endforeach
                                 </div>
                             </div><br>
                             <!-- <div class="row" id="">

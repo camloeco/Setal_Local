@@ -1408,46 +1408,121 @@ class FichaController extends Controller {
 				}
 			}
 		}
+	}
 
-		return view('Modules.Seguimiento.Ficha.listarCaracterizaciones');
+	public function getHorarios()
+	{
+		extract($_GET);
+
+		$tbody = "";
+		$sql = "SELECT sfch.fic_car_hor_dia, sfch.fic_car_hor_hora_inicio, sfch.fic_car_hor_hora_fin, sfch.fic_car_hor_dia, spa.pla_amb_descripcion FROM sep_ficha_caracterizacion sfc, sep_ficha_caracterizacion_horario sfch, sep_planeacion_ambiente spa WHERE sfc.fic_car_id = sfch.fic_car_id AND spa.pla_amb_id = sfch.pla_amb_id AND sfch.fic_car_id = '$fic_car_id'";
+		$horarios = DB::select($sql);
+
+		foreach ($horarios as $hor) {
+
+			$tbody .= "<tr><td>".$hor->fic_car_hor_dia."</td>";
+			$tbody .= "<td colspan='3' style='text-align: center;'>".$hor->pla_amb_descripcion."</td>";
+			$tbody .= "<td style='text-align: center;'>".$hor->fic_car_hor_hora_inicio."</td>";
+			$tbody .= "<td style='text-align: center;'>".$hor->fic_car_hor_hora_fin."</td></tr>";
+		}
+		return $tbody;
+	}
+
+	public function getExportardatos()
+	{
+		extract($_GET);
+
+		if (is_numeric($fic_car_id)) {
+			$sql = "SELECT fc.fic_car_id, fc.prog_codigo, fc.prog_codigo_version, fc.fic_car_blackboard, fc.pla_tip_ofe_id, fc.niv_for_id, fc.fic_car_fec_diligenciada, fc.fic_car_est_id, e.fic_car_est_descripcion, p.prog_nombre, tpo.pla_tip_ofe_id, tpo.pla_tip_ofe_descripcion, nf.niv_for_id, nf.niv_for_nombre, pa.par_identificacion,pa.par_nombres, pa.par_apellidos, pa.par_telefono, pa.par_correo FROM sep_ficha_caracterizacion fc, sep_ficha_caracterizacion_estado e, sep_programa p,sep_planeacion_tipo_oferta tpo, sep_nivel_formacion nf, sep_participante pa WHERE fc.fic_car_est_id = e.fic_car_est_id AND p.prog_codigo = fc.prog_codigo AND fc.pla_tip_ofe_id = tpo.pla_tip_ofe_id AND fc.niv_for_id = nf.niv_for_id AND pa.par_identificacion = fc.par_identificacion AND fc.fic_car_id = '$fic_car_id'";
+			$data = DB::select($sql);
+
+			$sql = "SELECT sfch.fic_car_hor_dia, sfch.fic_car_hor_hora_inicio, sfch.fic_car_hor_hora_fin, sfch.fic_car_hor_dia, spa.pla_amb_descripcion FROM sep_ficha_caracterizacion sfc, sep_ficha_caracterizacion_horario sfch, sep_planeacion_ambiente spa WHERE sfc.fic_car_id = sfch.fic_car_id AND spa.pla_amb_id = sfch.pla_amb_id AND sfch.fic_car_id = '$fic_car_id'";
+			$horarios = DB::select($sql);
+			
+			$filas_horarios = "";
+
+			// Creamos las filas de los horarios
+			foreach ($horarios as $hor){
+				$filas_horarios.=
+				"<tr><td>".utf8_decode($hor->fic_car_hor_dia)."</td>
+				<td colspan='3' style='text-align: center;'>".utf8_decode($hor->pla_amb_descripcion)."</td>
+				<td>".utf8_decode($hor->fic_car_hor_hora_inicio)."</td>
+				<td>".utf8_decode($hor->fic_car_hor_hora_fin)."</td></tr>";
+			}
+
+			//Exportamos la tabla
+			$tabla = "
+			<style>
+			table, td {
+				border: 1px solid black;
+				border-collapse: collapse;
+				font-family:Arial;
+			}
+			</style>
+			<table>
+				<tbody>
+					<tr>
+						<td><strong>Programa</strong></td>
+						<td colspan='3'>".utf8_decode($data[0]->prog_nombre)."</td>
+						<td><strong>Versi&oacute;n</strong></td>
+						<td style='text-align: center;'>".utf8_decode($data[0]->prog_codigo_version)."</td>
+					</tr>
+					<tr>
+						<td><strong>Territorium</strong></td>
+						<td style='text-align: center;'>".utf8_decode($data[0]->fic_car_blackboard)."</td>
+						<td><strong>Tipo de formaci&oacute;n</strong></td>
+						<td style='text-align: center;'>".utf8_decode($data[0]->pla_tip_ofe_descripcion)."</td>
+						<td><strong>Nivel</strong></td>
+						<td style='text-align: center;'>".utf8_decode($data[0]->niv_for_nombre)."</td>
+					</tr>
+					<tr>
+						<td colspan='6' style='text-align: center;'><strong>HORARIO</strong></td>
+					</tr>
+					<tr>
+						<td rowspan='2' style='text-align: center; vertical-align: middle;'><strong>D&Iacute;A</strong></td>
+						<td colspan='3' rowspan='2' style='text-align: center; vertical-align: middle;'><strong>AMBIENTE DE FORMACI&Oacute;N</strong></td>
+						<td colspan='2' style='text-align: center;'><strong>HORAS (24 horas)</strong></td>
+					</tr>
+					<tr>
+						<td style='text-align: center;'><strong>INICIO</strong></td>
+						<td style='text-align: center;'><strong>FIN</strong></td>
+					</tr>"
+					.$filas_horarios.
+					"<tr>
+						<td colspan='6' style='text-align: center;'><strong>INFORMACI&Oacute;N DEL INSTRUCTOR</strong></td>
+					</tr>
+					<tr>
+						<td><strong>Instructor</strong></td>
+						<td colspan='3' style='text-align: center;'>".utf8_decode($data[0]->par_nombres." ".$data[0]->par_apellidos)."</td>
+						<td><strong>C.C</strong></td>
+						<td  style='text-align: center;'>".utf8_decode($data[0]->par_identificacion)."</td>
+					</tr>
+					<tr>
+						<td><strong>Tel&eacute;fono</strong></td>
+						<td colspan='3' style='text-align: center;'>".utf8_decode($data[0]->par_telefono)."</td>
+						<td><strong>Email</strong></td>
+						<td  style='text-align: center;'>".utf8_decode($data[0]->par_correo)."</td>
+					</tr>
+				</tbody>
+			</table>
+			<h4>Power By Setalpro ".date('Y')."</h4>";
+			
+			header('Content-type: application/vnd.ms-excel; charset=utf-8');
+			header("Content-Disposition: attachment; filename=FICHA_CARACTERIZACIN_".$fic_car_id.".xls");
+			header("Pragma: no-cache");
+			header("Expires: 0");
+			echo $tabla;
+		}
 	}
 
 	public function getListarcaracterizaciones()
 	{
-		$sql = "SELECT 
-		fc.fic_car_id, fc.prog_codigo, 
-		fc.prog_codigo_version, 
-		fc.fic_car_blackboard, 
-		fc.pla_tip_ofe_id, 
-		fc.niv_for_id, 
-		fc.fic_car_fec_diligenciada, 
-		fc.fic_car_est_id, 
-		e.fic_car_est_descripcion, 
-		p.prog_nombre, 
-		tpo.pla_tip_ofe_id, 
-		tpo.pla_tip_ofe_descripcion, 
-		nf.niv_for_id, nf.niv_for_nombre, 
-		pa.par_identificacion, 
-		pa.par_nombres, 
-		pa.par_apellidos 
-		FROM 
-		sep_ficha_caracterizacion fc, 
-		sep_ficha_caracterizacion_estado e, 
-		sep_programa p, 
-		sep_planeacion_tipo_oferta tpo, 
-		sep_nivel_formacion nf, 
-		sep_participante pa 
-		WHERE 
-		fc.fic_car_est_id = e.fic_car_est_id AND 
-		p.prog_codigo = fc.prog_codigo AND 
-		fc.pla_tip_ofe_id = tpo.pla_tip_ofe_id AND 
-		fc.niv_for_id = nf.niv_for_id AND 
-		pa.par_identificacion = fc.par_identificacion";
-        $data = DB::select($sql);
+		$sql = "SELECT fc.fic_car_id, fc.prog_codigo, fc.prog_codigo_version, fc.fic_car_blackboard, fc.pla_tip_ofe_id, fc.niv_for_id, fc.fic_car_fec_diligenciada, fc.fic_car_est_id, e.fic_car_est_descripcion, p.prog_nombre, tpo.pla_tip_ofe_id, tpo.pla_tip_ofe_descripcion, nf.niv_for_id, nf.niv_for_nombre, pa.par_identificacion, pa.par_nombres, pa.par_apellidos, pa.par_telefono, pa.par_correo FROM sep_ficha_caracterizacion fc, sep_ficha_caracterizacion_estado e, sep_programa p, sep_planeacion_tipo_oferta tpo, sep_nivel_formacion nf, sep_participante pa WHERE fc.fic_car_est_id = e.fic_car_est_id AND p.prog_codigo = fc.prog_codigo AND fc.pla_tip_ofe_id = tpo.pla_tip_ofe_id AND fc.niv_for_id = nf.niv_for_id AND pa.par_identificacion = fc.par_identificacion";
+		$data = DB::select($sql);
 
 		$rol = \Auth::user()->participante->rol_id;
 		// $par_identificacion = \Auth::user()->participante->par_identificacion;
-
+		
         return view('Modules.Seguimiento.Ficha.listarCaracterizaciones', compact('data', 'rol'));
 	}
 
